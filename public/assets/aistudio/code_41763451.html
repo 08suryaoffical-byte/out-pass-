@@ -1,0 +1,778 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-background": "#111c2d",
+        "on-tertiary": "#ffffff",
+        "surface-container-high": "#dee8ff",
+        "inverse-primary": "#bec6e0",
+        "primary-container": "#131b2e",
+        "on-primary-container": "#7c839b",
+        "inverse-on-surface": "#ecf1ff",
+        "inverse-surface": "#263143",
+        "tertiary-fixed": "#7ffc97",
+        "secondary-fixed-dim": "#b4c5ff",
+        "secondary-container": "#316bf3",
+        "surface-bright": "#f9f9ff",
+        "on-secondary": "#ffffff",
+        "tertiary": "#000000",
+        "on-primary-fixed-variant": "#3f465c",
+        "on-tertiary-container": "#009842",
+        "tertiary-fixed-dim": "#62df7d",
+        "outline-variant": "#c6c6cd",
+        "surface-tint": "#565e74",
+        "primary": "#000000",
+        "surface-dim": "#cfdaf2",
+        "on-tertiary-fixed-variant": "#005320",
+        "on-secondary-container": "#fefcff",
+        "secondary-fixed": "#dbe1ff",
+        "error-container": "#ffdad6",
+        "on-primary": "#ffffff",
+        "on-primary-fixed": "#131b2e",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-highest": "#d8e3fb",
+        "on-surface-variant": "#45464d",
+        "outline": "#76777d",
+        "on-secondary-fixed": "#00174b",
+        "on-error-container": "#93000a",
+        "surface-variant": "#d8e3fb",
+        "on-error": "#ffffff",
+        "background": "#f9f9ff",
+        "on-secondary-fixed-variant": "#003ea8",
+        "on-surface": "#111c2d",
+        "primary-fixed": "#dae2fd",
+        "tertiary-container": "#002109",
+        "surface-container-low": "#f0f3ff",
+        "on-tertiary-fixed": "#002109",
+        "error": "#ba1a1a",
+        "surface-container": "#e7eeff",
+        "surface": "#f9f9ff",
+        "secondary": "#0051d5",
+        "primary-fixed-dim": "#bec6e0"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-sm": "0.5rem",
+        "gutter": "1.5rem",
+        "space-lg": "1.5rem",
+        "gutter-mobile": "0.75rem",
+        "space-xs": "0.25rem",
+        "space-md": "1rem",
+        "margin": "2rem",
+        "margin-mobile": "1rem",
+        "space-xl": "2rem"
+      },
+      "fontFamily": {
+        "headline-xl-mobile": ["Inter"],
+        "body-md": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "label-lg": ["Inter"],
+        "label-md": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-sm": ["Inter"],
+        "headline-xl": ["Inter"],
+        "data-mono-num": ["Inter"],
+        "label-sm": ["Inter"],
+        "body-sm": ["Inter"]
+      },
+      "fontSize": {
+        "headline-xl-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "data-mono-num": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-primary-container"><div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary-container text-[20px]">verified_user</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest leading-none">Smart Outpass</span><span class="font-label-sm text-label-sm text-on-primary-container tracking-wider uppercase mt-1">Student Portal</span></div></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-secondary-container text-on-secondary-container"><a class="flex items-center px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" data-path="apply-outpass" href="#">Apply Outpass</a><a class="flex items-center px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" data-path="my-applications" href="#">My Applications</a><a class="flex items-center px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" data-path="outpass-history" href="#">Outpass History</a><a class="flex items-center px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" data-path="gate-passes" href="#">Gate Passes (QR)</a><a aria-current="page" class="flex items-center px-space-md py-2.5 rounded-lg transition-colors font-label-lg bg-secondary-container text-on-secondary-container" data-path="hostel-profile" href="#">My Profile</a><a class="flex items-center px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" data-path="support-and-help" href="#">Support &amp; Help</a></nav></div></div><div class="p-space-md m-space-md bg-surface-variant/10 rounded-xl flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container uppercase">Hostel Block</span><span class="font-label-lg text-label-lg text-surface-container-lowest">Block D - Rm 412</span></div><span class="material-symbols-outlined text-on-primary-container text-[20px]">apartment</span></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low rounded-full"><span class="material-symbols-outlined text-secondary text-[16px]">school</span><span class="font-label-sm text-label-sm text-on-surface">Session 2024-25</span></div><div class="flex items-center gap-1 px-2.5 py-1 bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-on-tertiary-container text-[15px]">lock</span><span class="font-label-sm text-label-sm text-on-surface-variant">SSL Encrypted</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface leading-none">Arjun Kumar</span><span class="font-data-mono-num text-data-mono-num text-on-surface-variant mt-0.5">21BCE1042</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 px-gutter flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Modals / Overlay Panels -->
+<!-- 1. Password Management Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="password-modal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Update Student Portal Password</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Active directory &amp; biometric sync credentials</p>
+</div>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleModal('password-modal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-space-lg flex flex-col gap-space-md" onsubmit="event.preventDefault(); toggleModal('password-modal'); showToast('Password updated successfully');">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span class="">Current Password</span>
+<span class="font-body-sm text-body-sm text-secondary cursor-pointer hover:underline">Forgot?</span>
+</label>
+<div class="relative">
+<input class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm" placeholder="••••••••••••" required="" type="password">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline text-[18px] cursor-pointer">visibility</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">New Secure Password</label>
+<div class="relative">
+<input class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm" id="new-pwd-input" placeholder="Create strong passphrase" required="" type="password">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline text-[18px] cursor-pointer">visibility</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Confirm New Password</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm" placeholder="Re-enter new passphrase" required="" type="password">
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-label-sm text-label-sm text-on-surface mb-0.5">Password Compliance Rules:</span>
+<div class="flex items-center gap-1.5 text-on-tertiary-container"><span class="material-symbols-outlined text-[15px]">check_circle</span> Minimum 10 characters length</div>
+<div class="flex items-center gap-1.5 text-on-tertiary-container"><span class="material-symbols-outlined text-[15px]">check_circle</span> Mix of uppercase, numbers &amp; symbols</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[15px]">radio_button_unchecked</span> Not matching previous 3 passwords</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-md text-label-md text-on-surface transition-colors" onclick="toggleModal('password-modal')" type="button">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 font-label-md text-label-md transition-colors shadow-sm flex items-center gap-1.5" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified_user</span> Confirm &amp; Re-authenticate
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- 2. Edit Contact Details Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="contact-modal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Update Contact Records</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Phone numbers trigger OTP verification protocol</p>
+</div>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleModal('contact-modal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-space-lg flex flex-col gap-space-md" onsubmit="event.preventDefault(); toggleModal('contact-modal'); showToast('Contact information saved successfully');">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Registered Mobile Number</label>
+<div class="flex gap-2">
+<input class="flex-1 h-10 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm" type="tel" value="+91 98765-43210">
+<button class="px-3 h-10 rounded-lg bg-surface-container font-label-sm text-label-sm text-secondary hover:bg-surface-container-high transition-colors whitespace-nowrap" onclick="showToast('OTP sent to student mobile (+91 98765-43210)')" type="button">Send OTP</button>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Used for instant SMS Gate Egress Notifications</span>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Personal Emergency Email</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm" type="email" value="arjun.personal99@gmail.com">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Receives backup copies of approved outpasses</span>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Emergency Blood Group / Medical Special Notes</label>
+<div class="grid grid-cols-2 gap-2">
+<select class="h-10 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm">
+<option selected="">O+ (Positive)</option>
+<option>A+ (Positive)</option>
+<option>B+ (Positive)</option>
+<option>AB+ (Positive)</option>
+<option>O- (Negative)</option>
+</select>
+<input class="h-10 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm" placeholder="No known allergies" type="text" value="None recorded">
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-high/60 rounded-lg flex items-start gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">info</span>
+<span class="">Guardian phone changes require written signature approval at the Residential Warden Office Block D.</span>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-md text-label-md text-on-surface transition-colors" onclick="toggleModal('contact-modal')" type="button">Discard</button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 font-label-md text-label-md transition-colors shadow-sm" type="submit">Save Contact Info</button>
+</div>
+</form>
+</div>
+</div>
+<!-- 3. Photo Update Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="photo-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Update Gate Biometric Photo</h3>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleModal('photo-modal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col items-center gap-space-md text-center">
+<div class="w-32 h-32 rounded-2xl overflow-hidden shadow-md relative group">
+<img class="w-full h-full object-cover" data-alt="Official high-resolution institutional student identification portrait of Arjun Kumar, Indian male student in his early twenties, clean-shaven, neutral expression against plain off-white studio background with soft diffuse light, wearing navy blue polo shirt, professional college badge photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCprbKfSUxrHlojqRvjtbdyHi2eFAsvyFx_gjQ23oD1lSM1r7TNm0Q1TQCZqmg4uFzaIDuoAE779u1oBTlK_OT68QBGcDDsKnI90ZbJl9noCPuf9hfv-uvAFnvKY-phF-3eeQCBh3DxWDtpLA3ko12o7CQrOL_qPftw4hcd0z8-DipJx9LaQHYRbHhCbL4R8MmDVZ58AeDNGoc2MspUMgAR-xEq58e8ST9XRt8FKpM">
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface">Institutional Compliance Standard</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Must feature clear frontal facial lighting with neutral white backdrop. Photos will be analyzed by Campus Gate AI recognition models.</p>
+</div>
+<div class="w-full p-space-md bg-surface-container-low rounded-xl flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[32px] text-secondary mb-1">cloud_upload</span>
+<span class="font-label-md text-label-md text-on-surface">Drag &amp; drop new passport photo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PNG or JPG up to 5MB</span>
+</div>
+<div class="flex items-center justify-end w-full gap-space-sm pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-md text-label-md text-on-surface transition-colors" onclick="toggleModal('photo-modal')">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary/90 transition-colors shadow-sm" onclick="toggleModal('photo-modal'); showToast('Photo submitted for Warden moderation');">Submit for Verification</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl font-body-md text-body-md items-center gap-2 transition-all" id="toast">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">check_circle</span>
+<span id="toast-text" class="">Operation completed</span>
+</div>
+<!-- Main Content Body -->
+<div class="py-space-md flex flex-col gap-space-lg">
+<!-- Breadcrumb & Top Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#">Student Portal</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-secondary transition-colors" href="#">Account &amp; Records</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-label-lg">My Profile</span>
+</nav>
+<div class="flex items-center gap-2">
+<div class="px-3 py-1 rounded-full bg-surface-container-low flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="">Verified Registry Token • 2024-R4</span>
+</div>
+<span class="text-on-surface-variant font-data-mono-num text-body-sm">Sync: 2m ago</span>
+</div>
+</div>
+<!-- 1. Top Profile Hero Header Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg relative overflow-hidden">
+<!-- Ambient decorative gradient glow inside card -->
+<div class="absolute -top-16 -right-16 w-64 h-64 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-lg z-10">
+<!-- Avatar Container with Verification & Camera Action -->
+<div class="relative group">
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of Arjun Kumar, an Indian male college undergraduate engineering student wearing an academic navy blue uniform polo, clean studio portrait with soft rim lighting and institutional ID aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs8FI9GPknqJu6jW1jz59UBPkHszjaMyQ9vBTaoUOIaQkLzx4YUDwVFVZ9WyQTSVifsUpXkOLjazqPUxO5Cs7w7h0rvMB3_5eKUWATIOg_suMrTEWVBKyGBrVx2SMKpWJiY4qf5sAy2TaWOEqYXYXBiBaDgbdOZGoGyilyhpzDkuOpBnY4wqDZamtmHmWXTvtrV1k1CAa4n-GWXyAeNBJaFpD_8bR38W2Gw13pteM">
+</div>
+<!-- Camera Overlay Trigger -->
+<button class="absolute -bottom-2 -right-2 w-9 h-9 rounded-xl bg-surface-container-lowest shadow-md flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-all" onclick="toggleModal('photo-modal')" title="Update Photo">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<!-- Verified Floating Badge -->
+<div class="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm" title="Identity Verified &amp; Biometric Active">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<!-- Student Title & Metadata -->
+<div class="flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Arjun Kumar</h1>
+<div class="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-surface-container font-data-mono-num text-label-md text-on-surface-variant" title="Official Registrar Locked Register Number">
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span class="">21BCE1042</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1 font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">domain</span>
+              Computer Science &amp; Engineering
+            </span>
+<span class="text-outline">•</span>
+<span class="font-body-md text-body-md">3rd Year • Section B (2022–2026 Batch)</span>
+</div>
+<!-- Institutional Trust Status Badges -->
+<div class="flex flex-wrap items-center gap-2 mt-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="">Account Status: Active &amp; Enrolled</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">fingerprint</span>
+<span class="">Biometric Clearance: Verified</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">apartment</span>
+<span class="">Hostel: Kaveri Block D - Rm 412</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Header Quick Actions -->
+<div class="flex flex-wrap lg:flex-col xl:flex-row items-center gap-space-sm w-full lg:w-auto z-10">
+<button class="flex-1 lg:flex-none px-4 py-2.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 font-label-md text-label-md transition-colors shadow-sm flex items-center justify-center gap-2" onclick="toggleModal('contact-modal')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span class="">Edit Contact Details</span>
+</button>
+<button class="flex-1 lg:flex-none px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="toggleModal('password-modal')">
+<span class="material-symbols-outlined text-[18px] text-outline">lock</span>
+<span class="">Security &amp; Password</span>
+</button>
+<button class="flex-1 lg:flex-none px-3 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="showToast('Generating official encrypted PDF Identity Dossier...')" title="Export Identity Dossier PDF">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span class="">Dossier</span>
+</button>
+</div>
+</div>
+<!-- 2. Administrative Security & Governance Callout Banner -->
+<div class="bg-surface-container-high/60 rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface flex items-center gap-1.5">
+            Administrative Governance Notice
+            <span class="px-2 py-0.5 rounded bg-surface-container-lowest font-label-sm text-label-sm text-secondary font-semibold">Strict Protocol</span>
+</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Official academic enrollments, mentor assignments, hostel allocations, and approval hierarchy permissions are strictly managed by the Dean's Office and Registrar. Official records cannot be edited directly by students. For discrepancies, submit an institutional correction ticket.
+          </p>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-secondary font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap" href="#support-ticket" onclick="showToast('Redirecting to Dean &amp; Registrar Governance Helpdesk')">
+<span class="">Submit Correction Request</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3. Primary Grid: 4 Detailed Information Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- CARD 1: Personal & Contact Information -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low/40 px-space-md py-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Personal Information</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Contact &amp; Personal</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Full Name (Locked) -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Full Legal Name</span>
+<span class="material-symbols-outlined text-outline text-[14px]" title="Locked by Registrar">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Arjun Kumar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">As per Matriculation Certificate</span>
+</div>
+<!-- Register Number (Locked) -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Register Number</span>
+<span class="material-symbols-outlined text-outline text-[14px]" title="Managed by Registrar">lock</span>
+</div>
+<span class="font-data-mono-num text-label-lg text-on-surface mt-1 font-semibold">21BCE1042</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Managed by Registrar Office</span>
+</div>
+<!-- Official Email (SSO Locked) -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low sm:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">College Official Email</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> Institutional SSO
+                </span>
+</div>
+<span class="font-data-mono-num text-body-lg text-on-surface mt-1">arjun.k@student.nits.edu</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Primary routing address for Warden &amp; Faculty approvals</span>
+</div>
+<!-- Student Mobile Phone (Editable with action) -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Personal Student Phone</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">check</span> SMS Verified
+                </span>
+</div>
+<span class="font-data-mono-num text-label-lg text-on-surface mt-1">+91 98765-43210</span>
+<button class="text-left font-label-sm text-label-sm text-secondary hover:underline mt-1" onclick="toggleModal('contact-modal')">Edit / Re-verify Number →</button>
+</div>
+<!-- Alternate Email -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Emergency Alternate Email</span>
+<button class="text-on-surface-variant hover:text-secondary" onclick="toggleModal('contact-modal')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<span class="font-data-mono-num text-body-md text-on-surface mt-1 truncate">arjun.personal99@gmail.com</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Backup outpass PDF recipient</span>
+</div>
+<!-- Blood Group & Emergency Medical -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low sm:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Blood Group &amp; Medical Notes</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-on-surface-variant">Campus Clinic ID: CL-904</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2.5 py-0.5 rounded bg-error-container text-on-error-container font-label-lg text-label-lg font-bold">O+ Positive</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">No acute medical alerts recorded. Standard egress clearance.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm bg-surface-container-low/40 p-space-sm rounded-lg">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">verified</span>
+<span class="">Contact registry verified on 18 Feb 2025</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary/90 transition-colors shadow-sm flex items-center gap-1" onclick="toggleModal('contact-modal')">
+<span class="material-symbols-outlined text-[16px]">edit_note</span> Edit Contact Info
+          </button>
+</div>
+</div>
+<!-- CARD 2: Official Academic Information -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low/40 px-space-md py-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">school</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Academic Information</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">lock</span> Registrar Controlled
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Department -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low sm:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Academic Department</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Department of Computer Science &amp; Engineering</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">School of Computing &amp; Informatics</span>
+</div>
+<!-- Degree & Program -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Degree &amp; Program</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">B.Tech (Honours)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Specialization: CSE</span>
+</div>
+<!-- Current Academic Year & Semester -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Academic Year &amp; Semester</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">3rd Year • 6th Sem</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Spring Session 2025</span>
+</div>
+<!-- Section & Roll Number -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Class Section &amp; Class Roll</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Section B (Roll No. 42)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Class Representative: Yes</span>
+</div>
+<!-- HOD Information -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Head of Department (HOD)</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Dr. S. Chawla</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">chawla.s@nits.edu</span>
+</div>
+<!-- Assigned Faculty Mentor (Interactive) -->
+<div class="flex flex-col p-3.5 rounded-lg bg-surface-container-high/40 sm:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Assigned Faculty Mentor</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-tertiary-container font-medium">Stage 1 Approver</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-label-lg font-bold">
+                    KR
+                  </div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Dr. K. Ramanathan</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cabin #204, Academic Block A • <span class="font-data-mono-num text-secondary">ram.k@nits.edu</span></p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors shadow-sm flex items-center gap-1 self-start sm:self-center" onclick="showToast('Drafting priority message to Dr. K. Ramanathan')">
+<span class="material-symbols-outlined text-[16px] text-secondary">mail</span> Contact Mentor
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Academic Standing Outpass Eligibility Metric -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface">Academic Standing: Good Standing</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">CGPA: <strong class="text-on-surface">8.74</strong> • Attendance: <strong class="text-on-surface">88.4%</strong> (Eligible for standard egress curfew)</p>
+</div>
+</div>
+<span class="hidden sm:inline-flex px-2.5 py-1 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+            Clearance Tier A
+          </span>
+</div>
+</div>
+<!-- CARD 3: Hostel & Residential Life Information -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low/40 px-space-md py-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">apartment</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Hostel &amp; Residential Life</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">lock</span> Warden Council
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Hostel & Room -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hostel Block</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Kaveri Boys Hostel (Block 3)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Senior Undergraduate Block</span>
+</div>
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Assigned Room &amp; Wing</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Room 412 (West Wing)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4th Floor • Shared Double</span>
+</div>
+<!-- Hostel Warden Contact -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low sm:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chief Hostel Warden</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-on-surface-variant">Stage 2 Approver</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface">Prof. V. Natarajan</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Warden Office Kaveri Ground Floor • <span class="font-data-mono-num">+91 044-2257-8900</span></p>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-secondary" onclick="showToast('Connecting Warden Intercom Desk...')">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</div>
+<!-- Egress Turnstile Assigned -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Authorized Egress Turnstiles</span>
+<span class="material-symbols-outlined text-outline text-[14px]">lock</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface mt-1">Turnstile Kaveri Gate 01</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Campus Main Gate 04</span>
+</div>
+<!-- Curfew Compliance Status -->
+<div class="flex flex-col p-3 rounded-lg bg-tertiary-container/10">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Curfew Compliance Record</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px]">verified</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Tier-1 Clean Record</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">0 Curfew Breaches this academic year</span>
+</div>
+<!-- Registered Parent / Guardian -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low sm:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Registered Primary Guardian &amp; OTP Target</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">Consent Target</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1.5">
+<div>
+<span class="font-label-md text-label-md text-on-surface">S. Kumar (Father)</span>
+<p class="font-data-mono-num text-body-sm text-on-surface mt-0.5">+91 98765-43210 (Active SMS OTP Dispatch)</p>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-label-sm text-label-sm text-on-surface">Permanent Residential Address:</span>
+<p class="truncate">142 Gandhi Puram Road, Coimbatore, TN - 641012</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low/70 rounded-lg flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nightly Curfew Hours: <strong class="text-on-surface">21:30 IST</strong> (Mon-Sun)</span>
+<a class="font-label-sm text-label-sm text-secondary hover:underline flex items-center gap-1" href="#" onclick="showToast('Downloading Hostel Handbook 2024-25')">
+<span class="">Residential Rules PDF</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- CARD 4: Security, Authentication & Account Telemetry -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low/40 px-space-md py-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">security</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Security &amp; Telemetry</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> 2FA Shield Active
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Account Privileges -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Account Security Status</span>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">Active &amp; Fully Privileged</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">No security flags pending</span>
+</div>
+<!-- Password Age -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Password Last Modified</span>
+<span class="font-label-lg text-label-lg text-on-surface mt-1">14 Jan 2025</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Changed 42 days ago</span>
+</div>
+<!-- Two-Factor Setup -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low sm:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Two-Factor Authentication Setup</span>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">Enabled</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">phonelink_lock</span>
+<span class="font-body-md text-body-md text-on-surface">Institutional SMS Gateway + Microsoft Authenticator App</span>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:underline" onclick="showToast('2FA settings managed by Institute Identity Vault')">Manage</button>
+</div>
+</div>
+<!-- Last Login Telemetry -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low sm:col-span-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last Successful Login Telemetry</span>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mt-1 font-body-sm text-body-sm text-on-surface">
+<span class="flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">wifi</span>
+                  Today at 08:42 IST
+                </span>
+<span class="font-data-mono-num text-on-surface-variant">IP: 172.16.4.88 • Campus Kaveri Wi-Fi AP-04</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Action Row -->
+<div class="flex flex-wrap items-center gap-2 pt-space-xs">
+<button class="flex-1 px-3 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 font-label-md text-label-md transition-colors shadow-sm flex items-center justify-center gap-1.5" onclick="toggleModal('password-modal')">
+<span class="material-symbols-outlined text-[16px]">key</span> Change Password
+          </button>
+<button class="flex-1 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="showToast('Displaying 2 active sessions on Campus Network')">
+<span class="material-symbols-outlined text-[16px] text-outline">devices</span> Active Sessions
+          </button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="showToast('Identity Passcard QR generated for Apple Wallet &amp; PDF download')" title="Download Digital Passcard">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4. Quick Governance Audit Trail & Correction Request Callout -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md" id="support-ticket">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Administrative Governance Log</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tamper-evident record changes synced from Registrar Enterprise Database</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface hover:bg-surface-container-high transition-colors flex items-center gap-1 self-start sm:self-auto" onclick="showToast('Audit log export sent to official email')">
+<span class="material-symbols-outlined text-[14px]">download</span> Export Audit Log
+        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container-high bg-surface-container-low/50">
+<th class="py-2.5 px-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Timestamp</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Event Description</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Authorized Entity</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Verification Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-3 font-data-mono-num text-on-surface">18 Feb 2025, 14:20 IST</td>
+<td class="py-3 px-3 text-on-surface">Mobile phone number OTP verification completed</td>
+<td class="py-3 px-3 text-on-surface-variant">Student Self-Service Portal</td>
+<td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">Verified</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-3 font-data-mono-num text-on-surface">15 Jan 2025, 10:05 IST</td>
+<td class="py-3 px-3 text-on-surface">Semester 6 Course Registration Roll Confirmed (Sec B)</td>
+<td class="py-3 px-3 text-on-surface-variant">Dean of Academics Office</td>
+<td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm">Enrolled</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-3 font-data-mono-num text-on-surface">04 Jan 2025, 09:12 IST</td>
+<td class="py-3 px-3 text-on-surface">Hostel Room 412 Biometric Turnstile Clearance Renewal</td>
+<td class="py-3 px-3 text-on-surface-variant">Kaveri Chief Warden Office</td>
+<td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">Authorized</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Inline Script for Modal Control and Toast Feedback -->
+<script>
+    function toggleModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        if (modal.classList.contains('hidden')) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      if (toast && text) {
+        text.textContent = message;
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.classList.remove('flex');
+        }, 3200);
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-md px-gutter"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2024 Smart Outpass Residential Governance System. All rights reserved.</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Residence</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Security Guidelines</a></div></div></footer></div>
+
+</body></html>

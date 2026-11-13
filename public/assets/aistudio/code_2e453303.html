@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-error": "#ffffff",
+        "surface-container-highest": "#d8e3fb",
+        "primary-fixed": "#dae2fd",
+        "secondary": "#0051d5",
+        "on-tertiary": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-background": "#111c2d",
+        "inverse-primary": "#bec6e0",
+        "on-primary-fixed": "#131b2e",
+        "on-surface-variant": "#45464d",
+        "outline-variant": "#c6c6cd",
+        "inverse-on-surface": "#ecf1ff",
+        "surface-bright": "#f9f9ff",
+        "surface": "#f9f9ff",
+        "on-secondary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-container": "#fefcff",
+        "inverse-surface": "#263143",
+        "secondary-container": "#316bf3",
+        "tertiary-container": "#002109",
+        "tertiary-fixed": "#7ffc97",
+        "on-secondary": "#ffffff",
+        "on-secondary-fixed-variant": "#003ea8",
+        "surface-container-low": "#f0f3ff",
+        "background": "#f9f9ff",
+        "on-primary-container": "#7c839b",
+        "on-primary-fixed-variant": "#3f465c",
+        "primary-fixed-dim": "#bec6e0",
+        "on-surface": "#111c2d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#131b2e",
+        "on-tertiary-container": "#009842",
+        "primary": "#000000",
+        "on-tertiary-fixed-variant": "#005320",
+        "secondary-fixed": "#dbe1ff",
+        "on-error-container": "#93000a",
+        "tertiary-fixed-dim": "#62df7d",
+        "on-primary": "#ffffff",
+        "surface-container": "#e7eeff",
+        "on-tertiary-fixed": "#002109",
+        "surface-variant": "#d8e3fb",
+        "surface-container-high": "#dee8ff",
+        "surface-tint": "#565e74",
+        "outline": "#76777d",
+        "tertiary": "#000000",
+        "secondary-fixed-dim": "#b4c5ff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xl": "2rem",
+        "gutter": "1.5rem",
+        "space-sm": "0.5rem",
+        "margin": "2rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "space-xs": "0.25rem",
+        "margin-mobile": "1rem",
+        "gutter-mobile": "0.75rem"
+      },
+      "fontFamily": {
+        "label-sm": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-xl-mobile": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-sm": ["Inter"],
+        "headline-xl": ["Inter"],
+        "label-lg": ["Inter"],
+        "body-lg": ["Inter"],
+        "data-mono-num": ["Inter"],
+        "headline-sm": ["Inter"],
+        "body-md": ["Inter"],
+        "label-md": ["Inter"]
+      },
+      "fontSize": {
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-xl-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "data-mono-num": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-[72px] px-gutter flex items-center gap-space-sm border-b border-outline-variant/20"><div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[20px]">verified_user</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface tracking-tight leading-none">Smart Outpass</span><span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider mt-1 leading-none">HOD PORTAL</span></div></div><nav class="flex flex-col gap-space-xs px-space-md py-space-lg" data-active-classes="bg-secondary-container text-on-secondary-container font-headline-sm"><a aria-current="page" class="flex items-center justify-between px-space-md py-2.5 rounded-lg transition-colors bg-secondary-container text-on-secondary-container font-headline-sm" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="pending-hod-approvals" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">pending_actions</span><span class="font-label-lg text-label-lg">Pending Approvals</span></div><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">24</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="department-outpasses" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-label-lg text-label-lg">Dept Outpasses</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="department-students" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-lg text-label-lg">Dept Students</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="approval-history" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-label-lg text-label-lg">Approval History</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="hod-profile" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">account_box</span><span class="font-label-lg text-label-lg">HOD Profile</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="font-label-lg text-label-lg">Notifications</span></div></a></nav></div><div class="p-space-md border-t border-outline-variant/20"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="logout" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span class="font-label-lg text-label-lg">Logout</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-[72px] bg-surface-container-lowest border-b border-outline-variant/30 z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-on-surface-variant">HOD Portal</span><span class="font-label-md text-label-md text-outline">/</span><span class="font-label-lg text-label-lg text-on-surface">Dashboard</span></div><div class="flex items-center gap-gutter"><div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-low text-secondary border border-outline-variant/40"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm uppercase">Academic Session: 2025–26</span></div><div class="relative flex items-center"><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm text-headline-sm">SC</div><div class="flex flex-col text-left"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Dr. S. Chawla</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Head of Department (CSE)</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-[72px] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-margin space-y-space-xl max-w-[1540px] mx-auto w-full">
+<!-- 1. WELCOME / DEPARTMENT GOVERNANCE HEADER -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-space-xs">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          DEPARTMENT GOVERNANCE • STAGE 2 APPROVAL DESK
+        </div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface">HOD Dashboard</h1>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Good Morning, Dr. S. Chawla</span>
+<span class="font-body-md text-body-md text-outline">/</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Review department outpass requests and manage HOD level clearances.</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-sm px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md text-on-surface leading-tight">Computer Science &amp; Engineering</span>
+<span class="font-label-sm text-label-sm text-outline tracking-wider leading-tight">DEPT. CODE: CSE-04</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md shadow-xs">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          Head of Department
+        </div>
+</div>
+</div>
+<!-- 2. FOUR KPI METRIC CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1: Pending HOD Approvals -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-700">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-800 font-label-sm text-label-sm">High Priority</span>
+</div>
+<div class="mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Pending HOD Approvals</span>
+<div class="font-headline-xl text-headline-xl text-on-surface mt-1">24</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-amber-800 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+            Awaiting your endorsement
+          </div>
+<span class="font-label-sm text-label-sm text-outline">&gt;48h Egress</span>
+</div>
+</div>
+<!-- Card 2: Approved Today -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="w-11 h-11 rounded-xl bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">+18.4%</span>
+</div>
+<div class="mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Approved Today</span>
+<div class="font-headline-xl text-headline-xl text-on-surface mt-1">18</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-tertiary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">forward</span>
+            Forwarded to Assoc. Dean
+          </div>
+<span class="font-label-sm text-label-sm text-outline">Avg 34m</span>
+</div>
+</div>
+<!-- Card 3: Rejected Today -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="w-11 h-11 rounded-xl bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[24px]">cancel</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Resolved</span>
+</div>
+<div class="mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Rejected Today</span>
+<div class="font-headline-xl text-headline-xl text-on-surface mt-1">02</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-error font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+            Returned to Mentors
+          </div>
+<span class="font-label-sm text-label-sm text-outline">Low Attn</span>
+</div>
+</div>
+<!-- Card 4: Department Outpasses -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="w-11 h-11 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">2025-26</span>
+</div>
+<div class="mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Department Outpasses</span>
+<div class="font-headline-xl text-headline-xl text-on-surface mt-1">356</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">insights</span>
+            This academic session
+          </div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-label-md">94.2% Passed</span>
+</div>
+</div>
+</div>
+<!-- 3. PENDING HOD APPROVALS MAIN CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Section Header -->
+<div class="p-space-lg flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Pending HOD Approvals</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">24 Total</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Review mentor-approved requests (&gt;48 hrs or outstation) before forwarding to Associate Dean.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start xl:self-center">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+            Export Dept. Report
+          </button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary-container text-on-secondary-container font-label-lg text-label-lg hover:bg-secondary transition-colors shadow-xs">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+            Batch Quick Review
+          </button>
+</div>
+</div>
+<!-- Search and Filter Bar -->
+<div class="px-space-lg py-space-md bg-surface-container-low/40 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all" placeholder="Search student name or register number..." type="text"/>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Mentor Filter -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 bg-surface-container-lowest rounded-lg font-label-md text-label-md text-on-surface appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary/30">
+<option>All Mentors (CSE)</option>
+<option>Dr. K. Ramanathan</option>
+<option>Dr. P. Mehra</option>
+<option>Prof. A. Sen</option>
+<option>Dr. M. Iyer</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">keyboard_arrow_down</span>
+</div>
+<!-- Outpass Type -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 bg-surface-container-lowest rounded-lg font-label-md text-label-md text-on-surface appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary/30">
+<option>All Types</option>
+<option>Home Visit (&gt;48h)</option>
+<option>Internship / Hackathon</option>
+<option>Family Emergency</option>
+<option>Project Field Work</option>
+<option>Medical Leave</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">keyboard_arrow_down</span>
+</div>
+<!-- Urgency -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 bg-surface-container-lowest rounded-lg font-label-md text-label-md text-on-surface appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary/30">
+<option>Urgency: High to Normal</option>
+<option>Urgency: High Only</option>
+<option>Urgency: Standard</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">keyboard_arrow_down</span>
+</div>
+<!-- Departure Date -->
+<div class="relative">
+<button class="h-10 px-3 bg-surface-container-lowest rounded-lg font-label-md text-label-md text-on-surface flex items-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<span>Departure: All Dates</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Table Wrapper -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-3.5 px-space-md pl-space-lg" scope="col">Student</th>
+<th class="py-3.5 px-space-md" scope="col">Register No.</th>
+<th class="py-3.5 px-space-md" scope="col">Mentor</th>
+<th class="py-3.5 px-space-md" scope="col">Outpass Type</th>
+<th class="py-3.5 px-space-md" scope="col">Destination</th>
+<th class="py-3.5 px-space-md" scope="col">Departure</th>
+<th class="py-3.5 px-space-md" scope="col">Return</th>
+<th class="py-3.5 px-space-md" scope="col">Mentor Status</th>
+<th class="py-3.5 px-space-md" scope="col">HOD Status</th>
+<th class="py-3.5 px-space-md pr-space-lg text-right" scope="col">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-4 px-space-md pl-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+                    AK
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-snug">Arjun Kumar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3rd Yr • Sec B</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md font-data-mono-num text-data-mono-num text-on-surface">21BCE1042</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Dr. K. Ramanathan</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Endorsed
+                  </span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm">Home Visit (&gt;48h)</span>
+</td>
+<td class="py-4 px-space-md font-body-md text-body-md text-on-surface">Coimbatore</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">21 Feb, 17:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Friday evening</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">24 Feb, 20:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Monday night</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                  Mentor Approved
+                </span>
+<span class="block font-body-sm text-body-sm text-outline mt-0.5">20 Feb, 14:15</span>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                  Pending HOD Review
+                </span>
+</td>
+<td class="py-4 px-space-md pr-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-surface-container-low/20">
+<td class="py-4 px-space-md pl-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+                    RN
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-snug">Rohan Nandha</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4th Yr • Sec A</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md font-data-mono-num text-data-mono-num text-on-surface">20BCE0819</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Dr. P. Mehra</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Endorsed
+                  </span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Tech Hackathon</span>
+</td>
+<td class="py-4 px-space-md font-body-md text-body-md text-on-surface">Bangalore</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">22 Feb, 06:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Saturday morning</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">25 Feb, 22:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Tuesday night</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                  Mentor Approved
+                </span>
+<span class="block font-body-sm text-body-sm text-outline mt-0.5">20 Feb, 16:40</span>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                  Pending HOD Review
+                </span>
+</td>
+<td class="py-4 px-space-md pr-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-space-md pl-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+                    DS
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-snug">Deepika Sen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2nd Yr • Sec D</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md font-data-mono-num text-data-mono-num text-on-surface">22BCE1567</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Prof. A. Sen</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Endorsed
+                  </span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">Family Emergency</span>
+</td>
+<td class="py-4 px-space-md font-body-md text-body-md text-on-surface">Chennai</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">21 Feb, 19:30</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Immediate depart</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">24 Feb, 09:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Monday morning</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                  Mentor Approved
+                </span>
+<span class="block font-body-sm text-body-sm text-outline mt-0.5">20 Feb, 18:05</span>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                  Pending HOD Review
+                </span>
+</td>
+<td class="py-4 px-space-md pr-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-surface-container-low/20">
+<td class="py-4 px-space-md pl-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+                    VT
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-snug">Vikas Tirupati</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3rd Yr • Sec C</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md font-data-mono-num text-data-mono-num text-on-surface">21BCE0411</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Dr. M. Iyer</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Endorsed
+                  </span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Project Field Work</span>
+</td>
+<td class="py-4 px-space-md font-body-md text-body-md text-on-surface">Hyderabad</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">23 Feb, 08:30</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Sunday morning</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">28 Feb, 18:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">5 days field grant</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                  Mentor Approved
+                </span>
+<span class="block font-body-sm text-body-sm text-outline mt-0.5">20 Feb, 11:20</span>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                  Pending HOD Review
+                </span>
+</td>
+<td class="py-4 px-space-md pr-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-space-md pl-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+                    PR
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-snug">Priya Rajendran</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4th Yr • Sec B</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md font-data-mono-num text-data-mono-num text-on-surface">20BCE0314</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Dr. K. Ramanathan</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Endorsed
+                  </span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Medical Leave</span>
+</td>
+<td class="py-4 px-space-md font-body-md text-body-md text-on-surface">Madurai</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">22 Feb, 11:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Saturday midday</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">26 Feb, 18:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Consultation stay</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                  Mentor Approved
+                </span>
+<span class="block font-body-sm text-body-sm text-outline mt-0.5">20 Feb, 09:30</span>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                  Pending HOD Review
+                </span>
+</td>
+<td class="py-4 px-space-md pr-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-surface-container-low/20">
+<td class="py-4 px-space-md pl-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+                    SG
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-snug">Siddharth Ghosh</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3rd Yr • Sec A</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md font-data-mono-num text-data-mono-num text-on-surface">21BCE0954</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Dr. P. Mehra</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Endorsed
+                  </span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm">Home Visit (&gt;48h)</span>
+</td>
+<td class="py-4 px-space-md font-body-md text-body-md text-on-surface">Coimbatore</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">21 Feb, 16:30</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Friday train</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-body-md text-body-md text-on-surface">25 Feb, 08:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Tuesday class return</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                  Mentor Approved
+                </span>
+<span class="block font-body-sm text-body-sm text-outline mt-0.5">19 Feb, 17:10</span>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                  Pending HOD Review
+                </span>
+</td>
+<td class="py-4 px-space-md pr-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface-variant">
+          Showing <span class="font-label-lg text-label-lg text-on-surface">1–6</span> of <span class="font-label-lg text-label-lg text-on-surface">24</span> pending department requests
+        </span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:bg-surface-container-high transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md">1</button>
+<button class="w-8 h-8 rounded-lg text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors">3</button>
+<button class="w-8 h-8 rounded-lg text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors">4</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4. DEPARTMENT OVERVIEW & OVERSIGHT SECTION -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Department Outpass Intelligence &amp; Oversight (CSE)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time summary of department student egress and mentor review distribution.</p>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+          Live Sync Active
+        </div>
+</div>
+<!-- 4 Compact Metric Blocks -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Block 1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Department Roster</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">groups</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">1,240 Enrolled</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between">
+<span>Hostellers: 820</span>
+<span class="text-outline">|</span>
+<span>Day Scholars: 420</span>
+</div>
+</div>
+<!-- Block 2 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Active / Pending</span>
+<span class="material-symbols-outlined text-amber-600 text-[20px]">transfer_within_a_station</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">46 Students</div>
+<div class="font-body-sm text-body-sm text-amber-800 font-label-md">
+            3.7% of CSE Department Out
+          </div>
+</div>
+<!-- Block 3 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Dept. Approvals</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">rule</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">312 Clearances</div>
+<div class="font-body-sm text-body-sm text-on-tertiary-container font-label-md">
+            94.2% Compliance Rate
+          </div>
+</div>
+<!-- Block 4: Mentor Pending Distribution -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Mentor Pending Queue</span>
+<span class="material-symbols-outlined text-outline text-[20px]">badge</span>
+</div>
+<div class="grid grid-cols-2 gap-x-2 gap-y-1 font-body-sm text-body-sm mt-1">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Dr. Ramanathan</span>
+<span class="font-label-sm text-label-sm font-semibold text-amber-800 bg-amber-500/10 px-1.5 rounded">6</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Dr. Mehra</span>
+<span class="font-label-sm text-label-sm font-semibold text-amber-800 bg-amber-500/10 px-1.5 rounded">8</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Prof. Sen</span>
+<span class="font-label-sm text-label-sm font-semibold text-amber-800 bg-amber-500/10 px-1.5 rounded">5</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Dr. Iyer</span>
+<span class="font-label-sm text-label-sm font-semibold text-amber-800 bg-amber-500/10 px-1.5 rounded">5</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance Progress Bar -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md w-full sm:w-auto">
+<div class="w-10 h-10 rounded-full bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Campus Residential Outpass Compliance</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">CSE Department passes adhered to institutional curfew regulations without gate delays.</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md w-full sm:w-72 shrink-0">
+<div class="flex-1 bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 94.2%"></div>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold shrink-0">94.2%</span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

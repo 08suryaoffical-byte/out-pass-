@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-primary-fixed-variant": "#3f465c",
+        "tertiary-container": "#002109",
+        "inverse-primary": "#bec6e0",
+        "on-secondary-fixed-variant": "#003ea8",
+        "surface-container-lowest": "#ffffff",
+        "on-surface-variant": "#45464d",
+        "surface-tint": "#565e74",
+        "on-surface": "#111c2d",
+        "on-secondary-fixed": "#00174b",
+        "inverse-on-surface": "#ecf1ff",
+        "tertiary-fixed": "#7ffc97",
+        "primary-container": "#131b2e",
+        "background": "#f9f9ff",
+        "outline-variant": "#c6c6cd",
+        "surface": "#f9f9ff",
+        "surface-container-low": "#f0f3ff",
+        "on-tertiary-fixed": "#002109",
+        "on-background": "#111c2d",
+        "primary": "#000000",
+        "secondary-container": "#316bf3",
+        "on-primary-container": "#7c839b",
+        "surface-dim": "#cfdaf2",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "inverse-surface": "#263143",
+        "secondary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "secondary-fixed": "#dbe1ff",
+        "tertiary-fixed-dim": "#62df7d",
+        "on-tertiary-fixed-variant": "#005320",
+        "surface-bright": "#f9f9ff",
+        "primary-fixed": "dae2fd",
+        "on-primary-fixed": "#131b2e",
+        "surface-container-high": "#dee8ff",
+        "surface-container": "#e7eeff",
+        "tertiary": "#000000",
+        "error-container": "#ffdad6",
+        "outline": "#76777d",
+        "on-primary": "#ffffff",
+        "secondary": "#0051d5",
+        "surface-container-highest": "#d8e3fb",
+        "on-secondary": "#ffffff",
+        "on-tertiary-container": "#009842",
+        "on-error": "#ffffff",
+        "primary-fixed-dim": "#bec6e0",
+        "surface-variant": "#d8e3fb",
+        "on-secondary-container": "#fefcff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xl": "2rem",
+        "gutter": "1.5rem",
+        "margin-mobile": "1rem",
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem",
+        "gutter-mobile": "0.75rem",
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "margin": "2rem"
+      },
+      "fontFamily": {
+        "body-sm": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-sm": ["Inter"],
+        "label-sm": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-xl": ["Inter"],
+        "body-md": ["Inter"],
+        "label-lg": ["Inter"],
+        "data-mono-num": ["Inter"],
+        "label-md": ["Inter"],
+        "headline-xl-mobile": ["Inter"]
+      },
+      "fontSize": {
+        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "data-mono-num": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "headline-xl-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-primary-container"><div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary-container text-[20px]">verified_user</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest leading-none">Smart Outpass</span><span class="font-label-sm text-label-sm text-on-primary-container tracking-wider uppercase mt-1">Student Portal</span></div></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-secondary-container text-on-secondary-container font-label-lg text-label-lg rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg hover:text-surface-container-lowest transition-colors bg-secondary-container text-on-secondary-container font-label-lg" data-path="apply-outpass" href="#"><span class="material-symbols-outlined text-[20px]">post_add</span><span class="font-label-lg text-label-lg">Apply Outpass</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="my-applications" href="#"><span class="material-symbols-outlined text-[20px]">pending_actions</span><span class="font-label-lg text-label-lg">My Applications</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="outpass-history" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-label-lg text-label-lg">Outpass History</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="gate-passes" href="#"><span class="material-symbols-outlined text-[20px]">qr_code_2</span><span class="font-label-lg text-label-lg">Gate Passes (QR)</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="hostel-profile" href="#"><span class="material-symbols-outlined text-[20px]">night_shelter</span><span class="font-label-lg text-label-lg">Hostel Profile</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="support-and-help" href="#"><span class="material-symbols-outlined text-[20px]">help_outline</span><span class="font-label-lg text-label-lg">Support &amp; Help</span></a></nav></div></div><div class="p-space-md m-space-md bg-surface-variant/10 rounded-xl flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container uppercase">Hostel Block</span><span class="font-label-lg text-label-lg text-surface-container-lowest">Block D - Rm 412</span></div><span class="material-symbols-outlined text-on-primary-container text-[20px]">apartment</span></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low rounded-full"><span class="material-symbols-outlined text-secondary text-[16px]">school</span><span class="font-label-sm text-label-sm text-on-surface">Session 2024-25</span></div><div class="flex items-center gap-1 px-2.5 py-1 bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-on-tertiary-container text-[15px]">lock</span><span class="font-label-sm text-label-sm text-on-surface-variant">SSL Encrypted</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface leading-none">Arjun K.</span><span class="font-data-mono-num text-data-mono-num text-on-surface-variant mt-0.5">21BCE1042</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 px-gutter flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Operational Banner & Controls -->
+<div class="w-full pb-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase">Residential Protocol • Sub-tier Audit</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Track My Outpass</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Real-time institutional approval timeline, multi-tier audit trail, and digital gate pass verification.
+      </p>
+</div>
+<!-- Controls Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Selector Dropdown -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-on-surface font-label-lg text-label-lg px-space-md py-2.5 pr-10 rounded-lg shadow-sm hover:bg-surface-container-low transition-colors cursor-pointer" id="outpassSelector">
+<option selected="" value="active">#OP-2025-0842 [Weekend Home Visit - In Review]</option>
+<option value="approved">#OP-2025-0791 [Clinic Visit - Approved]</option>
+<option value="rejected">#OP-2025-0720 [Day Out - Rejected]</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-2.5 text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+<!-- Refresh Status Button -->
+<button class="flex items-center gap-1.5 px-space-md py-2.5 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg rounded-lg shadow-sm transition-all active:scale-95" id="refreshBtn" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">sync</span>
+<span>Sync</span>
+</button>
+<!-- Print Dossier Button -->
+<button class="flex items-center gap-1.5 px-space-md py-2.5 bg-primary text-on-primary hover:bg-on-surface font-label-lg text-label-lg rounded-lg shadow-sm transition-all active:scale-95" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Dossier</span>
+</button>
+</div>
+</div>
+<!-- Rejection Alert Drawer / Banner (Conditional state simulation) -->
+<div class="hidden mb-space-lg w-full bg-error-container text-on-error-container p-space-lg rounded-xl shadow-sm" id="rejectedNoticeBanner">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">gpp_bad</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-lg text-label-lg text-error uppercase tracking-wider">Application Rejected</span>
+<span class="font-label-sm text-label-sm text-on-error-container bg-surface-container-lowest/60 px-2 py-0.5 rounded-full">Record Ref: #OP-2025-0720</span>
+</div>
+<p class="font-body-md text-body-md text-on-error-container">
+<strong>Rejected By:</strong> Dr. Evelyn Reed (Associate Dean, Hostel Operations) • <strong>Timestamp:</strong> 10 Feb 2025, 14:15 IST
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+<strong>Reason:</strong> "Curfew restriction during internal examination preparation week; guardian consent unconfirmed on telephonic verification."
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<button class="px-space-md py-2 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md hover:bg-secondary-container transition-colors shadow-sm" type="button">
+          Apply Again
+        </button>
+<button class="px-space-md py-2 bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+          Contact Warden Desk
+        </button>
+</div>
+</div>
+</div>
+<!-- Approved State Notice Banner (Conditional state simulation) -->
+<div class="hidden mb-space-lg w-full bg-tertiary-container text-on-tertiary-container p-space-lg rounded-xl shadow-sm" id="approvedNoticeBanner">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-lg text-label-lg text-tertiary-fixed uppercase tracking-wider">Clearance Granted • Verified Outpass</span>
+<span class="font-data-mono-num text-data-mono-num text-tertiary-fixed-dim bg-surface-container-lowest/10 px-2 py-0.5 rounded">HMAC: 9f8a3d...72e1</span>
+</div>
+<p class="font-body-md text-body-md text-surface-container-lowest">
+            Biometric Gate Pass token #OP-2025-0791 is live and synced with Main Gate Turnstile 04.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 flex-wrap">
+<button class="px-space-md py-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-md text-label-md hover:bg-tertiary-fixed-dim transition-colors shadow-sm" type="button">
+          View Digital Pass
+        </button>
+<button class="px-space-md py-2 bg-surface-container-lowest/15 text-surface-container-lowest rounded-lg font-label-md text-label-md hover:bg-surface-container-lowest/25 transition-colors" type="button">
+          Download PDF Pass
+        </button>
+</div>
+</div>
+</div>
+<!-- Main 12-Column Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start pb-space-xl">
+<!-- LEFT 8-COLUMN MAIN TRACKING & AUDIT -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- 1. Application Summary Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Card Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-sm bg-surface-container-low/50 -m-space-lg p-space-lg mb-0 rounded-t-xl">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface" id="currentOutpassId">#OP-2025-0842</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Home Visit (Extended &gt;48h)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Submitted on 21 Feb 2025, 09:30 IST via Student Portal</span>
+</div>
+<!-- Dynamic Status Pill -->
+<div class="self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-secondary" id="statusBadge">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">In Multi-Tier Review</span>
+</div>
+</div>
+<!-- Meta Attributes Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Student Details -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Student Credential</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Arjun Kumar</span>
+</div>
+<div class="font-data-mono-num text-data-mono-num text-on-surface-variant">
+              Roll: 21BCE1042 • B.Tech CSE (3rd Year, Sec B)
+            </div>
+</div>
+<!-- Destination & Transit Details -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Destination Transit</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">location_on</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Coimbatore, Tamil Nadu</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">
+              Home Address: 142 Gandhi Puram Road, Ward 12
+            </div>
+</div>
+<!-- Departure & Return Window -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-2 md:col-span-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Egress &amp; Return Schedule</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm items-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Departure Window</span>
+<span class="font-data-mono-num text-data-mono-num text-on-surface font-semibold">Fri, 21 Feb 2025 • 17:00 IST</span>
+</div>
+<div class="flex items-center justify-start sm:justify-center">
+<div class="flex items-center gap-1 px-3 py-1 bg-surface-container-highest rounded-full text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">timelapse</span>
+<span>Duration: 3 Days, 3 Hours</span>
+</div>
+</div>
+<div class="flex flex-col sm:text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Expected Return Curfew</span>
+<span class="font-data-mono-num text-data-mono-num text-on-surface font-semibold">Mon, 24 Feb 2025 • 20:00 IST</span>
+</div>
+</div>
+</div>
+<!-- Stated Reason -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1 md:col-span-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Stated Reason for Leave</span>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Attending sister's wedding ceremony and scheduled family gathering."
+            </p>
+</div>
+<!-- Guardian Verification & Attached Dossier Proof -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Parental Consent State</span>
+<div class="flex items-center gap-2 text-on-tertiary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>OTP Authenticated via SMS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              +91 98765-43210 (S. Kumar) verified at 09:42 IST on 21 Feb 2025.
+            </p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col justify-between gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Attached Supporting Proof</span>
+<div class="flex items-center justify-between bg-surface-container-lowest px-3 py-2 rounded-lg shadow-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-error text-[20px]">picture_as_pdf</span>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface truncate">Parent_Consent_Feb25.pdf</span>
+<span class="font-data-mono-num text-body-sm text-on-surface-variant">1.8 MB</span>
+</div>
+</div>
+<button class="ml-2 font-label-sm text-label-sm text-secondary hover:underline shrink-0" type="button">
+                View Proof
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Detailed Approval Timeline (5-Stage Institutional Audit Tree) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Multi-Tier Approval Timeline</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sequential institutional clearance mandatory for turnstile QR tokenization.</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">encrypted</span>
+<span>Tamper-evident Audit Ledger</span>
+</div>
+</div>
+<!-- Vertical Stepper Rail -->
+<div class="relative pl-6 sm:pl-8 flex flex-col gap-space-xl before:content-[''] before:absolute before:left-3 sm:before:left-4 before:top-3 before:bottom-3 before:w-0.5 before:bg-surface-container-high">
+<!-- STAGE 1: SUBMISSION (COMPLETED) -->
+<div class="relative flex flex-col gap-1.5">
+<!-- Node Pin -->
+<div class="absolute -left-6 sm:-left-8 top-0 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px] font-bold">check</span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Stage 01</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Application Self-Submission</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-tertiary-container font-semibold">Completed</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between text-body-sm gap-1">
+<span class="text-on-surface font-semibold">Action by Arjun Kumar (Student Roll 21BCE1042)</span>
+<span class="font-data-mono-num text-on-surface-variant">21 Feb 2025, 09:30 IST</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Biometric 2FA token validated via student portal session. Parent automated SMS OTP token dispatched and successfully verified at 09:42 IST.
+              </p>
+<div class="flex items-center gap-1 font-data-mono-num text-body-sm text-on-surface-variant pt-1">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">check_circle</span>
+<span>Audit Ref: SUBMIT-HASH-8420-AA</span>
+</div>
+</div>
+</div>
+<!-- STAGE 2: MENTOR APPROVAL (COMPLETED) -->
+<div class="relative flex flex-col gap-1.5">
+<!-- Node Pin -->
+<div class="absolute -left-6 sm:-left-8 top-0 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px] font-bold">check</span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Stage 02</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Faculty Mentor Clearance</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-tertiary-container font-semibold">Approved</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between text-body-sm gap-1">
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-semibold">Dr. K. Ramanathan</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">(Faculty Advisor, Dept. of CSE)</span>
+</div>
+<span class="font-data-mono-num text-on-surface-variant">21 Feb 2025, 11:15 IST</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface italic bg-surface-container-lowest/80 p-2.5 rounded">
+                "Academic attendance verified at 88.4%. No practical laboratory conflict detected for Friday afternoon sessions. Student in good academic standing; leave strongly recommended."
+              </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-data-mono-num text-body-sm text-on-surface-variant">Digital Signature: HMAC-SHA256-42b9c7</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> PGP Cleared
+                </span>
+</div>
+</div>
+</div>
+<!-- STAGE 3: HOD APPROVAL (CURRENT ACTIVE IN REVIEW) -->
+<div class="relative flex flex-col gap-1.5">
+<!-- Node Pin with animated pulse ring -->
+<div class="absolute -left-6 sm:-left-8 top-0 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-surface-container-lowest ring-4 ring-secondary/30 flex items-center justify-center shadow-md">
+<div class="w-3 h-3 rounded-full bg-secondary animate-ping"></div>
+<div class="absolute w-2.5 h-2.5 rounded-full bg-secondary"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold">Stage 03 • Current</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Head of Department (HOD) Approval</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold animate-pulse">Under Review</span>
+</div>
+<div class="bg-surface-container-high/60 rounded-lg p-space-md flex flex-col gap-2">
+<div class="flex flex-wrap items-center justify-between text-body-sm gap-1">
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-semibold">Dr. S. Chawla</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">(Head of Department, CSE)</span>
+</div>
+<span class="font-data-mono-num text-secondary font-medium">In Queue since 11:20 IST</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                Triggered due to extended leave duration (&gt;48 hours). Reviewing curriculum progress and semester exam schedule compliance. Estimated review turnaround: within 2 hours.
+              </p>
+<div class="flex items-center gap-space-md pt-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">hourglass_top</span>
+<span>Average desk review: 1h 45m</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span>Escalation Alert Armed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STAGE 4: ASSOCIATE DEAN RESIDENTIAL LIFE (PENDING) -->
+<div class="relative flex flex-col gap-1.5 opacity-75">
+<!-- Node Pin -->
+<div class="absolute -left-6 sm:-left-8 top-0 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px]">schedule</span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Stage 04</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Associate Dean Residential Life</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium">In Queue</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1">
+<div class="flex flex-wrap items-center justify-between text-body-sm gap-1">
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-semibold">Dr. Evelyn Reed</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">(Associate Dean, Hostel Operations)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Awaiting Stage 03 Sign-off</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Final regulatory hostel egress authorization required for overnight out-of-station departures. Verification of hostel dues and disciplinary ledger.
+              </p>
+</div>
+</div>
+<!-- STAGE 5: QR GATE PASS GENERATION (LOCKED) -->
+<div class="relative flex flex-col gap-1.5 opacity-60">
+<!-- Node Pin -->
+<div class="absolute -left-6 sm:-left-8 top-0 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px]">lock</span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Stage 05</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Digital Gate Turnstile QR Pass</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">Locked</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Biometric turnstile cryptographic token will automatically synthesize upon Stage 04 regulatory sign-off. Instant push notification to student app and campus security consoles.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. State Preview Switcher Tabs -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Operational Visualizer</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Institutional State Inspector</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Inspect system behavior across approval lifecycles</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<button class="p-space-md rounded-lg text-left bg-surface-container-high transition-all" id="btnStateActive" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-secondary uppercase">Active Flow</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Stage 3 In-Review</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Simulates live approval tree with HOD evaluation.</p>
+</button>
+<button class="p-space-md rounded-lg text-left bg-surface-container-low hover:bg-surface-container transition-all" id="btnStateApproved" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-on-tertiary-container uppercase">Cleared</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Full Clearance</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Displays active QR token, HMAC signature &amp; gate pass.</p>
+</button>
+<button class="p-space-md rounded-lg text-left bg-surface-container-low hover:bg-surface-container transition-all" id="btnStateRejected" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-error uppercase">Refusal</span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Administrative Denial</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Inspects Dean rejection banner with corrective appeal path.</p>
+</button>
+</div>
+</section>
+</div>
+<!-- RIGHT 4-COLUMN DIGITAL GATE PASS & CONTEXT -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg min-w-0">
+<!-- 1. Live Digital Gate Pass Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<!-- Accent top line -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-secondary-container"></div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Gate Credentials</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Digital Gate Pass</h3>
+</div>
+<div class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1" id="qrStatusPill">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+<span>Pre-release</span>
+</div>
+</div>
+<!-- Digital Pass Card Visualization -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md relative shadow-sm">
+<!-- Card Identity Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-lg">
+                AK
+              </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Arjun Kumar</span>
+<span class="font-data-mono-num text-body-sm text-on-surface-variant">21BCE1042 • Kaveri Block D</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[26px]">nfc</span>
+</div>
+<!-- Pass Details Grid -->
+<div class="grid grid-cols-2 gap-2 text-body-sm bg-surface-container-lowest p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Authorised Exit</span>
+<span class="text-on-surface font-semibold">Gate 01 / Gate 04</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Room Number</span>
+<span class="text-on-surface font-semibold">Block D - 412</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Valid Egress From</span>
+<span class="font-data-mono-num text-on-surface">21 Feb • 17:00</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Curfew Return</span>
+<span class="font-data-mono-num text-on-surface">24 Feb • 20:00</span>
+</div>
+</div>
+<!-- QR Code Canvas / Container -->
+<div class="flex flex-col items-center justify-center p-space-md bg-surface-container-lowest rounded-xl shadow-inner relative">
+<!-- Dynamic QR Graphic (SVG) -->
+<div class="relative w-44 h-44 flex items-center justify-center" id="qrGraphicContainer">
+<!-- SVG QR Pattern -->
+<svg class="w-full h-full text-on-surface" fill="currentColor" id="qrSvg" viewbox="0 0 160 160">
+<!-- Outer Corner 1 -->
+<rect fill="currentColor" height="40" rx="4" width="40" x="10" y="10"></rect>
+<rect fill="white" height="24" rx="2" width="24" x="18" y="18"></rect>
+<rect fill="currentColor" height="12" width="12" x="24" y="24"></rect>
+<!-- Outer Corner 2 -->
+<rect fill="currentColor" height="40" rx="4" width="40" x="110" y="10"></rect>
+<rect fill="white" height="24" rx="2" width="24" x="118" y="18"></rect>
+<rect fill="currentColor" height="12" width="12" x="124" y="24"></rect>
+<!-- Outer Corner 3 -->
+<rect fill="currentColor" height="40" rx="4" width="40" x="10" y="110"></rect>
+<rect fill="white" height="24" rx="2" width="24" x="18" y="118"></rect>
+<rect fill="currentColor" height="12" width="12" x="24" y="124"></rect>
+<!-- Data Matrix Simulation Blocks -->
+<rect fill="currentColor" height="8" width="8" x="60" y="15"></rect>
+<rect fill="currentColor" height="8" width="8" x="75" y="15"></rect>
+<rect fill="currentColor" height="8" width="8" x="90" y="15"></rect>
+<rect fill="currentColor" height="16" width="8" x="60" y="30"></rect>
+<rect fill="currentColor" height="8" width="16" x="80" y="30"></rect>
+<rect fill="currentColor" height="8" width="8" x="70" y="45"></rect>
+<rect fill="currentColor" height="14" width="14" x="85" y="45"></rect>
+<!-- Center elements -->
+<rect fill="currentColor" height="16" width="8" x="20" y="60"></rect>
+<rect fill="currentColor" height="8" width="14" x="35" y="60"></rect>
+<rect fill="currentColor" height="14" width="8" x="35" y="75"></rect>
+<rect fill="currentColor" height="8" width="14" x="15" y="85"></rect>
+<rect fill="#2563eb" height="38" rx="8" width="38" x="60" y="65"></rect>
+<circle cx="79" cy="84" fill="white" r="8"></circle>
+<rect fill="currentColor" height="8" width="15" x="110" y="60"></rect>
+<rect fill="currentColor" height="15" width="15" x="135" y="60"></rect>
+<rect fill="currentColor" height="22" width="8" x="110" y="75"></rect>
+<rect fill="currentColor" height="8" width="14" x="125" y="85"></rect>
+<!-- Bottom elements -->
+<rect fill="currentColor" height="16" width="8" x="60" y="110"></rect>
+<rect fill="currentColor" height="8" width="14" x="75" y="110"></rect>
+<rect fill="currentColor" height="18" width="8" x="75" y="125"></rect>
+<rect fill="currentColor" height="8" width="8" x="90" y="118"></rect>
+<rect fill="currentColor" height="8" width="18" x="60" y="135"></rect>
+<rect fill="currentColor" height="14" width="8" x="110" y="110"></rect>
+<rect fill="currentColor" height="8" width="25" x="125" y="110"></rect>
+<rect fill="currentColor" height="14" width="14" x="120" y="125"></rect>
+<rect fill="currentColor" height="25" width="10" x="140" y="125"></rect>
+<rect fill="currentColor" height="8" width="18" x="110" y="135"></rect>
+</svg>
+<!-- Locked Overlay when in Review -->
+<div class="absolute inset-0 bg-surface-container-lowest/85 backdrop-blur-[2px] rounded-lg flex flex-col items-center justify-center p-space-sm text-center" id="qrLockedOverlay">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">QR Pass Token Locked</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant max-w-[170px] mt-0.5">
+                  Activates automatically upon Dean regulatory clearance.
+                </span>
+</div>
+</div>
+<!-- Cryptographic Verification Stub -->
+<div class="w-full mt-space-sm pt-space-xs flex flex-col items-center gap-0.5">
+<span class="font-data-mono-num text-label-sm text-on-surface-variant tracking-wider uppercase">Turnstile HMAC Stub</span>
+<span class="font-data-mono-num text-body-sm text-on-surface font-semibold bg-surface-container-low px-2 py-0.5 rounded" id="qrHashStub">
+                SHA256: 4f8a...e71c (PENDING KEY)
+              </span>
+</div>
+</div>
+<!-- Pass Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-1">
+<button class="w-full py-2.5 px-space-md bg-secondary text-on-secondary hover:bg-secondary-container rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 transition-colors shadow-sm" id="btnDownloadPass" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Download Official Application</span>
+</button>
+<button class="w-full py-2.5 px-space-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">share</span>
+<span>Share Tracking Link with Guardian</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. Turnstile & Curfew Advisory Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">policy</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Curfew &amp; Egress Advisory</h3>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Egress Turnstiles</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Kaveri Boys Hostel Gate 01 &amp; Main Campus Gate 04</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Biometric turnstiles will accept QR token precisely within departure window.</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mandatory In-Curfew</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">20:00 IST • Monday, 24 Feb 2025</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Arrival reporting at Hostel Security desk is strictly mandatory.</span>
+</div>
+<div class="p-space-sm rounded-lg bg-error-container/30 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-error uppercase font-bold">Automatic Escalation Rule</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+              Unaccounted delay exceeding <strong>30 minutes</strong> past registered curfew automatically dispatches emergency escalation alerts to Chief Warden, Proctor, and Registered Guardian.
+            </span>
+</div>
+</div>
+</section>
+<!-- 3. Residential Contact & Emergency Assistance Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Support &amp; Assistance</h3>
+<span class="material-symbols-outlined text-secondary text-[20px]">support_agent</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Warden Desk -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">apartment</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Hostel Warden Desk</span>
+<span class="font-data-mono-num text-body-sm text-on-surface-variant">+91 044-2257-8900</span>
+</div>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-lowest text-secondary hover:bg-surface-container-high transition-colors" href="tel:+9104422578900">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<!-- Faculty Advisor Desk -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Faculty Mentor Cabin</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dept. CSE • Cabin #204</span>
+</div>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-lowest text-secondary hover:bg-surface-container-high transition-colors" href="mailto:mentor.cse@university.edu">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<!-- Campus Central Security -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-error shadow-sm">
+<span class="material-symbols-outlined text-[18px]">emergency</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Emergency Gate Security</span>
+<span class="font-data-mono-num text-body-sm text-on-surface-variant">SOS Extension: 108 / 112</span>
+</div>
+</div>
+<a class="p-2 rounded-lg bg-error text-on-error hover:bg-on-error-container transition-colors" href="tel:108">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Interactive State Logic -->
+<script>
+    (function initOutpassTracker() {
+      const outpassSelector = document.getElementById('outpassSelector');
+      const refreshBtn = document.getElementById('refreshBtn');
+      const rejectedNotice = document.getElementById('rejectedNoticeBanner');
+      const approvedNotice = document.getElementById('approvedNoticeBanner');
+      
+      const btnStateActive = document.getElementById('btnStateActive');
+      const btnStateApproved = document.getElementById('btnStateApproved');
+      const btnStateRejected = document.getElementById('btnStateRejected');
+
+      const outpassIdDisplay = document.getElementById('currentOutpassId');
+      const statusBadge = document.getElementById('statusBadge');
+      const qrLockedOverlay = document.getElementById('qrLockedOverlay');
+      const qrStatusPill = document.getElementById('qrStatusPill');
+      const qrHashStub = document.getElementById('qrHashStub');
+      const btnDownloadPass = document.getElementById('btnDownloadPass');
+
+      function setState(state) {
+        // Reset banners
+        rejectedNotice.classList.add('hidden');
+        approvedNotice.classList.add('hidden');
+        btnStateActive.classList.remove('bg-surface-container-high');
+        btnStateActive.classList.add('bg-surface-container-low');
+        btnStateApproved.classList.remove('bg-surface-container-high');
+        btnStateApproved.classList.add('bg-surface-container-low');
+        btnStateRejected.classList.remove('bg-surface-container-high');
+        btnStateRejected.classList.add('bg-surface-container-low');
+
+        if (state === 'active') {
+          btnStateActive.classList.add('bg-surface-container-high');
+          btnStateActive.classList.remove('bg-surface-container-low');
+          outpassSelector.value = 'active';
+          outpassIdDisplay.textContent = '#OP-2025-0842';
+          
+          statusBadge.className = 'self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-secondary';
+          statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wide">In Multi-Tier Review</span>';
+          
+          qrLockedOverlay.classList.remove('hidden');
+          qrStatusPill.className = 'px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1';
+          qrStatusPill.innerHTML = '<span class="material-symbols-outlined text-[14px]">lock_clock</span><span>Pre-release</span>';
+          qrHashStub.textContent = 'SHA256: 4f8a...e71c (PENDING KEY)';
+          btnDownloadPass.innerHTML = '<span class="material-symbols-outlined text-[18px]">file_download</span><span>Download Official Application</span>';
+        } 
+        else if (state === 'approved') {
+          btnStateApproved.classList.add('bg-surface-container-high');
+          btnStateApproved.classList.remove('bg-surface-container-low');
+          approvedNotice.classList.remove('hidden');
+          outpassSelector.value = 'approved';
+          outpassIdDisplay.textContent = '#OP-2025-0791';
+
+          statusBadge.className = 'self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container';
+          statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span><span class="font-label-sm text-label-sm uppercase tracking-wide">Approved &amp; Issued</span>';
+
+          qrLockedOverlay.classList.add('hidden');
+          qrStatusPill.className = 'px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1';
+          qrStatusPill.innerHTML = '<span class="material-symbols-outlined text-[14px]">verified</span><span>Live Turnstile Sync</span>';
+          qrHashStub.textContent = 'HMAC: 9f8a3d82bc19472e1c';
+          btnDownloadPass.innerHTML = '<span class="material-symbols-outlined text-[18px]">qr_code</span><span>Show High-Res Gate Pass</span>';
+        }
+        else if (state === 'rejected') {
+          btnStateRejected.classList.add('bg-surface-container-high');
+          btnStateRejected.classList.remove('bg-surface-container-low');
+          rejectedNotice.classList.remove('hidden');
+          outpassSelector.value = 'rejected';
+          outpassIdDisplay.textContent = '#OP-2025-0720';
+
+          statusBadge.className = 'self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-error';
+          statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-error"></span><span class="font-label-sm text-label-sm uppercase tracking-wide">Application Rejected</span>';
+
+          qrLockedOverlay.classList.remove('hidden');
+          qrStatusPill.className = 'px-2.5 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm font-semibold flex items-center gap-1';
+          qrStatusPill.innerHTML = '<span class="material-symbols-outlined text-[14px]">cancel</span><span>Revoked</span>';
+          qrHashStub.textContent = 'STATUS: DENIED / VOID';
+          btnDownloadPass.innerHTML = '<span class="material-symbols-outlined text-[18px]">restart_alt</span><span>Re-apply with Changes</span>';
+        }
+      }
+
+      outpassSelector.addEventListener('change', (e) => {
+        setState(e.target.value);
+      });
+
+      btnStateActive.addEventListener('click', () => setState('active'));
+      btnStateApproved.addEventListener('click', () => setState('approved'));
+      btnStateRejected.addEventListener('click', () => setState('rejected'));
+
+      refreshBtn.addEventListener('click', () => {
+        const icon = refreshBtn.querySelector('.material-symbols-outlined');
+        icon.classList.add('animate-spin');
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+        }, 600);
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-md px-gutter"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2024 Smart Outpass Residential Governance System. All rights reserved.</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Residence</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Security Guidelines</a></div></div></footer></div>
+</body></html>

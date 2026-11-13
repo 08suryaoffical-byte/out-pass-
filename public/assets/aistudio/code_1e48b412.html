@@ -1,0 +1,680 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-primary-fixed-variant": "#3f465c",
+        "tertiary-container": "#002109",
+        "inverse-primary": "#bec6e0",
+        "on-secondary-fixed-variant": "#003ea8",
+        "surface-container-lowest": "#ffffff",
+        "on-surface-variant": "#45464d",
+        "surface-tint": "#565e74",
+        "on-surface": "#111c2d",
+        "on-secondary-fixed": "#00174b",
+        "inverse-on-surface": "#ecf1ff",
+        "tertiary-fixed": "#7ffc97",
+        "primary-container": "#131b2e",
+        "background": "#f9f9ff",
+        "outline-variant": "#c6c6cd",
+        "surface": "#f9f9ff",
+        "surface-container-low": "#f0f3ff",
+        "on-tertiary-fixed": "#002109",
+        "on-background": "#111c2d",
+        "primary": "#000000",
+        "secondary-container": "#316bf3",
+        "on-primary-container": "#7c839b",
+        "surface-dim": "#cfdaf2",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "inverse-surface": "#263143",
+        "secondary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "secondary-fixed": "#dbe1ff",
+        "tertiary-fixed-dim": "#62df7d",
+        "on-tertiary-fixed-variant": "#005320",
+        "surface-bright": "#f9f9ff",
+        "primary-fixed": "dae2fd",
+        "on-primary-fixed": "#131b2e",
+        "surface-container-high": "#dee8ff",
+        "surface-container": "#e7eeff",
+        "tertiary": "#000000",
+        "error-container": "#ffdad6",
+        "outline": "#76777d",
+        "on-primary": "#ffffff",
+        "secondary": "#0051d5",
+        "surface-container-highest": "#d8e3fb",
+        "on-secondary": "#ffffff",
+        "on-tertiary-container": "#009842",
+        "on-error": "#ffffff",
+        "primary-fixed-dim": "#bec6e0",
+        "surface-variant": "#d8e3fb",
+        "on-secondary-container": "#fefcff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xl": "2rem",
+        "gutter": "1.5rem",
+        "margin-mobile": "1rem",
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem",
+        "gutter-mobile": "0.75rem",
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "margin": "2rem"
+      },
+      "fontFamily": {
+        "body-sm": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-sm": ["Inter"],
+        "label-sm": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-xl": ["Inter"],
+        "body-md": ["Inter"],
+        "label-lg": ["Inter"],
+        "data-mono-num": ["Inter"],
+        "label-md": ["Inter"],
+        "headline-xl-mobile": ["Inter"]
+      },
+      "fontSize": {
+        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "data-mono-num": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "headline-xl-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-primary-container"><div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary-container text-[20px]">verified_user</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest leading-none">Smart Outpass</span><span class="font-label-sm text-label-sm text-on-primary-container tracking-wider uppercase mt-1">Student Portal</span></div></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-secondary-container text-on-secondary-container font-label-lg text-label-lg rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg hover:text-surface-container-lowest transition-colors bg-secondary-container text-on-secondary-container font-label-lg" data-path="apply-outpass" href="#"><span class="material-symbols-outlined text-[20px]">post_add</span><span class="font-label-lg text-label-lg">Apply Outpass</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="my-applications" href="#"><span class="material-symbols-outlined text-[20px]">pending_actions</span><span class="font-label-lg text-label-lg">My Applications</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="outpass-history" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-label-lg text-label-lg">Outpass History</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="gate-passes" href="#"><span class="material-symbols-outlined text-[20px]">qr_code_2</span><span class="font-label-lg text-label-lg">Gate Passes (QR)</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="hostel-profile" href="#"><span class="material-symbols-outlined text-[20px]">night_shelter</span><span class="font-label-lg text-label-lg">Hostel Profile</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-surface-variant/20 hover:text-surface-container-lowest transition-colors" data-path="support-and-help" href="#"><span class="material-symbols-outlined text-[20px]">help_outline</span><span class="font-label-lg text-label-lg">Support &amp; Help</span></a></nav></div></div><div class="p-space-md m-space-md bg-surface-variant/10 rounded-xl flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container uppercase">Hostel Block</span><span class="font-label-lg text-label-lg text-surface-container-lowest">Block D - Rm 412</span></div><span class="material-symbols-outlined text-on-primary-container text-[20px]">apartment</span></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low rounded-full"><span class="material-symbols-outlined text-secondary text-[16px]">school</span><span class="font-label-sm text-label-sm text-on-surface">Session 2024-25</span></div><div class="flex items-center gap-1 px-2.5 py-1 bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-on-tertiary-container text-[15px]">lock</span><span class="font-label-sm text-label-sm text-on-surface-variant">SSL Encrypted</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface leading-none">Arjun K.</span><span class="font-data-mono-num text-data-mono-num text-on-surface-variant mt-0.5">21BCE1042</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 px-gutter flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive script for sidebar navigation active state highlight & form logic -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Synchronize active nav item in Shell
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'apply-outpass') {
+          link.classList.remove('text-on-primary-container', 'hover:bg-surface-variant/20');
+          link.classList.add('bg-secondary-container', 'text-on-secondary-container', 'font-label-lg', 'rounded-lg');
+        } else {
+          link.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+        }
+      });
+    });
+
+    function selectOutpassType(element, typeName) {
+      document.querySelectorAll('.outpass-type-card').forEach(card => {
+        card.classList.remove('bg-secondary/10', 'text-secondary');
+        card.classList.add('bg-surface-container-low', 'text-on-surface');
+        const dot = card.querySelector('.radio-dot');
+        if (dot) {
+          dot.classList.remove('bg-secondary');
+          dot.classList.add('bg-transparent');
+        }
+      });
+      element.classList.remove('bg-surface-container-low', 'text-on-surface');
+      element.classList.add('bg-secondary/10', 'text-secondary');
+      const activeDot = element.querySelector('.radio-dot');
+      if (activeDot) {
+        activeDot.classList.remove('bg-transparent');
+        activeDot.classList.add('bg-secondary');
+      }
+      const typeSummary = document.getElementById('summary-type');
+      if (typeSummary) typeSummary.innerText = typeName;
+    }
+
+    function toggleSuccessModal(show) {
+      const modal = document.getElementById('submission-success-modal');
+      if (modal) {
+        if (show) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    }
+
+    function handleCharCount(textarea) {
+      const counter = document.getElementById('char-count');
+      if (counter) {
+        counter.innerText = `${textarea.value.length} / 500`;
+      }
+    }
+  </script>
+<!-- Page Header Hierarchy -->
+<div class="w-full pb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="flex flex-col">
+<!-- Breadcrumb navigation -->
+<nav aria-label="Breadcrumbs" class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant mb-1">
+<span class="hover:text-on-surface cursor-pointer">Student Portal</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface cursor-pointer">Applications</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-semibold">New Outpass</span>
+</nav>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Apply for Outpass</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Submit your residential campus egress request for multi-level regulatory verification.</p>
+</div>
+<!-- Institutional Session Badge -->
+<div class="flex items-center gap-2 self-start lg:self-center px-space-md py-1.5 bg-surface-container-low rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium tracking-wide">Academic Session 2024–25 • Auto-Dispatched to Assigned Mentor</span>
+</div>
+</div>
+</div>
+<!-- Primary Workspace: 12-Column Fluid Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start pb-space-xl">
+<!-- LEFT & CENTER FORM WORKSPACE (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- SECTION 1: STUDENT PROFILE (Read-Only Biometric & Registry Record) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">badge</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Student Information</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">verified</span>
+            Verified Biometric Profile • Auto-synced from Campus Registry
+          </span>
+</div>
+<!-- 3-Column Attribute Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-md">
+<!-- Student Name -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Student Name</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" title="Institutional Record Locked">lock</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-1">Arjun Kumar</span>
+</div>
+<!-- Register Number -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Register Number</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" title="Institutional Record Locked">lock</span>
+</div>
+<span class="font-data-mono-num text-data-mono-num text-on-surface mt-1 font-semibold">21BCE1042</span>
+</div>
+<!-- Department -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Department</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" title="Institutional Record Locked">lock</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium truncate mt-1">B.Tech - CSE</span>
+</div>
+<!-- Year & Section -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Year &amp; Section</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">3rd Year • Section B</span>
+</div>
+<!-- Hostel & Wing -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Hostel Block</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1 truncate">Kaveri Boys Hostel (Blk 3)</span>
+</div>
+<!-- Room Assignment -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Room Assigned</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">Room 412 (West Wing)</span>
+</div>
+<!-- Assigned Mentor (Full Span in Row) -->
+<div class="sm:col-span-2 md:col-span-3 flex items-center justify-between bg-surface-container rounded-lg px-4 py-2.5">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">school</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Assigned Mentor:</span>
+<span class="font-body-md text-body-md text-on-surface">Dr. K. Ramanathan (Cabin #204, Academic Block A)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-medium">Stage 1 Reviewer</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: OUTPASS DETAILS & TRANSIT SCHEDULE -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-2 pb-space-md mb-space-md">
+<span class="material-symbols-outlined text-secondary text-[22px]">departure_board</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Outpass Transit Details</h2>
+</div>
+<form class="flex flex-col gap-space-lg" onsubmit="event.preventDefault(); toggleSuccessModal(true);">
+<!-- Outpass Type Selector -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+              Select Outpass Category <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<!-- Option 1: Day Out -->
+<div class="outpass-type-card cursor-pointer p-space-md rounded-xl bg-surface-container-low transition-all hover:bg-surface-container flex flex-col justify-between h-28" onclick="selectOutpassType(this, 'Local Day Out')">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-[20px] text-secondary">wb_sunny</span>
+<div class="w-4 h-4 rounded-full flex items-center justify-center bg-surface-container-highest">
+<div class="radio-dot w-2 h-2 rounded-full bg-transparent"></div>
+</div>
+</div>
+<div>
+<span class="font-label-lg text-label-lg block font-semibold">Day Out</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">Curfew 20:30 • Local</span>
+</div>
+</div>
+<!-- Option 2: Home Visit (Selected by default) -->
+<div class="outpass-type-card cursor-pointer p-space-md rounded-xl bg-secondary/10 text-secondary transition-all hover:bg-secondary/15 flex flex-col justify-between h-28" onclick="selectOutpassType(this, 'Weekend Home Visit')">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-[20px] text-secondary">roofing</span>
+<div class="w-4 h-4 rounded-full flex items-center justify-center bg-secondary/20">
+<div class="radio-dot w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+<div>
+<span class="font-label-lg text-label-lg block font-semibold text-secondary">Home Visit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">Overnight • OTP Consent</span>
+</div>
+</div>
+<!-- Option 3: Emergency -->
+<div class="outpass-type-card cursor-pointer p-space-md rounded-xl bg-surface-container-low transition-all hover:bg-surface-container flex flex-col justify-between h-28" onclick="selectOutpassType(this, 'Emergency Exit')">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-[20px] text-error">e911_emergency</span>
+<div class="w-4 h-4 rounded-full flex items-center justify-center bg-surface-container-highest">
+<div class="radio-dot w-2 h-2 rounded-full bg-transparent"></div>
+</div>
+</div>
+<div>
+<span class="font-label-lg text-label-lg block font-semibold text-error">Emergency</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">Priority Dispatch</span>
+</div>
+</div>
+<!-- Option 4: Official Duty / Event -->
+<div class="outpass-type-card cursor-pointer p-space-md rounded-xl bg-surface-container-low transition-all hover:bg-surface-container flex flex-col justify-between h-28" onclick="selectOutpassType(this, 'Official Campus Duty')">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">event_available</span>
+<div class="w-4 h-4 rounded-full flex items-center justify-center bg-surface-container-highest">
+<div class="radio-dot w-2 h-2 rounded-full bg-transparent"></div>
+</div>
+</div>
+<div>
+<span class="font-label-lg text-label-lg block font-semibold">Official Duty</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">Symposium / Academic</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Destination & Travel Address -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="destination-address">
+<span class="">Destination &amp; Residence Address <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Provide street-level address for verification</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">location_on</span>
+<input class="w-full bg-surface-container-lowest rounded-lg py-2.5 pl-11 pr-4 font-body-md text-body-md text-on-surface shadow-sm focus:outline-none focus:bg-surface-container-low transition-all" id="destination-address" required="" type="text" value="Coimbatore (Home Address, 142 Gandhi Puram Road, Tamil Nadu)">
+</div>
+</div>
+<!-- Reason for Leaving (Textarea) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="outpass-reason">
+                Reason for Leaving <span class="text-error">*</span>
+</label>
+<span class="font-data-mono-num text-data-mono-num text-on-surface-variant text-[12px]" id="char-count">54 / 500</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest rounded-lg p-3 font-body-md text-body-md text-on-surface shadow-sm focus:outline-none focus:bg-surface-container-low transition-all resize-none" id="outpass-reason" maxlength="500" oninput="handleCharCount(this)" placeholder="Provide a detailed, legitimate explanation of departure purpose..." rows="3">Attending sister's wedding ceremony and scheduled family gathering.</textarea>
+</div>
+<!-- Schedule Selectors: Departure & Return -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md bg-surface-container-low p-space-md rounded-xl">
+<!-- Departure Schedule Block -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Planned Departure</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Departure Date</label>
+<input class="w-full bg-surface-container-lowest rounded-lg py-2 px-3 font-body-sm text-body-sm text-on-surface shadow-sm focus:outline-none" required="" type="date" value="2025-02-28">
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Departure Time</label>
+<input class="w-full bg-surface-container-lowest rounded-lg py-2 px-3 font-body-sm text-body-sm text-on-surface shadow-sm focus:outline-none" required="" type="time" value="17:00">
+</div>
+</div>
+</div>
+<!-- Expected Return Schedule Block -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Expected Return (Turnstile Curfew)</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Return Date</label>
+<input class="w-full bg-surface-container-lowest rounded-lg py-2 px-3 font-body-sm text-body-sm text-on-surface shadow-sm focus:outline-none" required="" type="date" value="2025-03-03">
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Return Time</label>
+<input class="w-full bg-surface-container-lowest rounded-lg py-2 px-3 font-body-sm text-body-sm text-on-surface shadow-sm focus:outline-none" required="" type="time" value="19:30">
+</div>
+</div>
+</div>
+</div>
+<!-- Total Duration Computed Metric Chip & Guardian verification -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container rounded-lg p-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">timelapse</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Total Out-of-Campus Duration:</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-lowest font-data-mono-num text-data-mono-num font-bold text-secondary" id="calculated-duration">
+                3 Days, 2.5 Hours
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Classifies as Extended Visit (&gt;48h)</span>
+</div>
+<!-- Parent / Guardian Contact Verification -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-space-md rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">contact_phone</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Registered Parent / Guardian Contact</span>
+<span class="font-data-mono-num text-data-mono-num font-bold text-on-surface text-[15px]">+91 98765-43210</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">Verified SMS Consent Channel Active</span>
+</div>
+</div>
+</form>
+</section>
+<!-- SECTION 3: DOCUMENT UPLOAD (Supporting Proof) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">upload_file</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Supporting Proof Documents</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Mandatory for &gt; 2 Days Leave</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg mb-space-md flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Official proof is required for emergency departures, event participation, and extended home visits exceeding 48 hours. Formats accepted: PDF, JPG, PNG up to 10MB.
+          </p>
+</div>
+<!-- Drag & Drop Zone Container -->
+<div class="rounded-xl p-space-lg bg-surface-container-low/60 flex flex-col items-center justify-center text-center transition-all hover:bg-surface-container-high/40 cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-3 shadow-inner">
+<span class="material-symbols-outlined text-[26px]">cloud_upload</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Drag and drop supporting consent letter or medical document here</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">or <button class="text-secondary font-semibold hover:underline" type="button">browse files</button> from local device</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80 mt-2">Maximum file allocation: 10 MB (Signed by Guardian / Organizer)</span>
+</div>
+<!-- Uploaded File Card Preview -->
+<div class="mt-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Parent_Leave_Consent_Letter_Feb25.pdf</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                  Ready for submission
+                </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1.8 MB • Uploaded 24 Feb 2025 at 14:12 IST</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface text-label-sm font-medium hover:bg-surface-container transition-colors" type="button">
+              Browse another
+            </button>
+<button aria-label="Remove uploaded document" class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 4: STATUTORY DECLARATION & AUDIT CONFIRMATION -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-2 pb-space-md mb-space-md">
+<span class="material-symbols-outlined text-secondary text-[22px]">gavel</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Declarations &amp; Residential Undertakings</h2>
+</div>
+<div class="flex flex-col gap-3">
+<label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-lg hover:bg-surface-container-low transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface">
+              I confirm that all destination details, travel dates, and emergency contact records provided in this form are genuine and completely verified.
+            </span>
+</label>
+<label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-lg hover:bg-surface-container-low transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface">
+              I agree to strictly comply with the Residential Hostel Curfew Regulations (Code 402-B) and report through the biometric gate turnstiles on or prior to the declared return time.
+            </span>
+</label>
+<label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-lg hover:bg-surface-container-low transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface">
+              I acknowledge that an automated real-time SMS notification with Parent OTP verification link will be immediately dispatched upon submission to mentor desk.
+            </span>
+</label>
+</div>
+<!-- Action Control Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg mt-space-lg">
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+            Cancel Application
+          </button>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">draft</span>
+              Save as Draft
+            </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg hover:bg-secondary/90 shadow-md transition-all" onclick="toggleSuccessModal(true)" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+              Submit Outpass Request
+            </button>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT CONTEXTUAL SIDEBAR: WORKFLOW SUMMARY & GUIDELINES (4 Columns) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-20">
+<!-- STAGE 1: APPROVAL PIPELINE TRACKER -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_tree</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Outpass Pathway</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container-high rounded font-medium text-on-surface-variant">5 Stages</span>
+</div>
+<!-- Vertical Stepper Pathway -->
+<div class="relative flex flex-col gap-4 pl-3">
+<!-- Continuous Line -->
+<div class="absolute left-6 top-3 bottom-4 w-0.5 bg-surface-container-high"></div>
+<!-- Step 1: Student Application (Active / Current) -->
+<div class="relative flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-secondary font-bold">1. Student Application</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Form entry in progress</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Now</span>
+</div>
+</div>
+<!-- Step 2: Mentor Approval -->
+<div class="relative flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">2. Mentor Verification</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dr. K. Ramanathan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80 mt-0.5">Assigned Faculty Advisor</span>
+</div>
+</div>
+<!-- Step 3: HOD Approval -->
+<div class="relative flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px]">business</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">3. Department Head (HOD)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dept. of Computer Science</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80 mt-0.5">Required for &gt; 48 hours leave</span>
+</div>
+</div>
+<!-- Step 4: Warden Clearance -->
+<div class="relative flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px]">apartment</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">4. Associate Dean &amp; Hostel Warden Clearance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kaveri Boys Hostel Office</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80 mt-0.5">Room &amp; Curfew Register update</span>
+</div>
+</div>
+<!-- Step 5: Gate QR Activation -->
+<div class="relative flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">5. Gate QR Pass Issued</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Main Turnstile Security</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80 mt-0.5">Valid for 15m scanning window</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STAGE 2: HOSTEL CURFEW & CODE NOTICE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-2 pb-space-sm mb-space-md">
+<span class="material-symbols-outlined text-secondary text-[20px]">schedule</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Curfew Regulations</h3>
+</div>
+<div class="flex flex-col gap-3">
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">wb_twilight</span>
+<span class="font-body-md text-body-md text-on-surface">Day Out Cutoff</span>
+</div>
+<span class="font-data-mono-num text-data-mono-num font-bold text-on-surface">20:30 IST</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">lock_clock</span>
+<span class="font-body-md text-body-md text-on-surface">Main Gate Lock-down</span>
+</div>
+<span class="font-data-mono-num text-data-mono-num font-bold text-error">21:00 IST</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Violations of turnstile reporting will trigger an automatic behavioral notification flag to the Chief Proctor and Parents.
+          </p>
+</div>
+</div>
+<!-- STAGE 3: DIRECT ESCALATION CONTACT -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Residential Warden Desk</span>
+<span class="font-data-mono-num text-data-mono-num text-secondary font-bold">+91 044-2257-8900</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+          Available 24x7 for medical emergencies, express dispatch escalations, and transit approvals.
+        </p>
+</div>
+</div>
+</div>
+<!-- POPUP / HIGH-FIDELITY SUBMISSION CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="submission-success-modal">
+<div class="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl p-space-xl flex flex-col items-center text-center animate-fade-in">
+<!-- Close Button -->
+<button aria-label="Close Modal" class="absolute top-4 right-4 p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" onclick="toggleSuccessModal(false)" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<!-- Emerald Animated Success Icon -->
+<div class="w-16 h-16 rounded-full bg-tertiary-container/10 text-on-tertiary-container flex items-center justify-center mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<!-- Title & Context -->
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Outpass Request Submitted!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 max-w-sm">
+        Your application has been logged on the residential ledger and auto-routed to <span class="font-semibold text-on-surface">Dr. K. Ramanathan</span> for preliminary clearance.
+      </p>
+<!-- Detailed Receipt Box -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md my-space-lg flex flex-col gap-2.5 text-left">
+<div class="flex items-center justify-between pb-2 border-b-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Application ID</span>
+<div class="flex items-center gap-1.5">
+<span class="font-data-mono-num text-data-mono-num font-bold text-secondary">#OP-2025-0914</span>
+<button aria-label="Copy Outpass ID" class="text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Logged At</span>
+<span class="font-data-mono-num text-data-mono-num text-on-surface font-medium">24 Feb 2025, 14:35 IST</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Outpass Category</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="summary-type">Weekend Home Visit</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Initial Status</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Pending Mentor Review
+          </span>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-highest/40 rounded-lg p-2.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">sms</span>
+<span class="font-body-sm text-body-sm text-on-surface">OTP Dispatched to Parent: <strong class="font-data-mono-num">+91 98765-XXXXX</strong></span>
+</div>
+</div>
+<!-- Modal Action Buttons -->
+<div class="w-full flex flex-col sm:flex-row items-center gap-space-sm">
+<button class="w-full py-2.5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" onclick="toggleSuccessModal(false)" type="button">
+          Return to Dashboard
+        </button>
+<button class="w-full py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg hover:bg-secondary/90 shadow-md transition-colors flex items-center justify-center gap-2" onclick="toggleSuccessModal(false)" type="button">
+<span class="">Track Application</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-md px-gutter"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2024 Smart Outpass Residential Governance System. All rights reserved.</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Residence</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Security Guidelines</a></div></div></footer></div>
+
+
+</body></html>

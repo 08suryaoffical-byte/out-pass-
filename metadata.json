@@ -1,0 +1,6 @@
+{
+  "name": "Smart Outpass Management System",
+  "description": "Official Smart Outpass Management System for Dhanalakshmi Srinivasan University, Samayapuram, Trichy. Gate pass clearance and real-time egress tracking for Students, Faculty, HODs, and Administration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-error": "#ffffff",
+        "surface-container-highest": "#d8e3fb",
+        "primary-fixed": "#dae2fd",
+        "secondary": "#0051d5",
+        "on-tertiary": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-background": "#111c2d",
+        "inverse-primary": "#bec6e0",
+        "on-primary-fixed": "#131b2e",
+        "on-surface-variant": "#45464d",
+        "outline-variant": "#c6c6cd",
+        "inverse-on-surface": "#ecf1ff",
+        "surface-bright": "#f9f9ff",
+        "surface": "#f9f9ff",
+        "on-secondary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-container": "#fefcff",
+        "inverse-surface": "#263143",
+        "secondary-container": "#316bf3",
+        "tertiary-container": "#002109",
+        "tertiary-fixed": "#7ffc97",
+        "on-secondary": "#ffffff",
+        "on-secondary-fixed-variant": "#003ea8",
+        "surface-container-low": "#f0f3ff",
+        "background": "#f9f9ff",
+        "on-primary-container": "#7c839b",
+        "on-primary-fixed-variant": "#3f465c",
+        "primary-fixed-dim": "#bec6e0",
+        "on-surface": "#111c2d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#131b2e",
+        "on-tertiary-container": "#009842",
+        "primary": "#000000",
+        "on-tertiary-fixed-variant": "#005320",
+        "secondary-fixed": "#dbe1ff",
+        "on-error-container": "#93000a",
+        "tertiary-fixed-dim": "#62df7d",
+        "on-primary": "#ffffff",
+        "surface-container": "#e7eeff",
+        "on-tertiary-fixed": "#002109",
+        "surface-variant": "#d8e3fb",
+        "surface-container-high": "#dee8ff",
+        "surface-tint": "#565e74",
+        "outline": "#76777d",
+        "tertiary": "#000000",
+        "secondary-fixed-dim": "#b4c5ff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xl": "2rem",
+        "gutter": "1.5rem",
+        "space-sm": "0.5rem",
+        "margin": "2rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "space-xs": "0.25rem",
+        "margin-mobile": "1rem",
+        "gutter-mobile": "0.75rem"
+      },
+      "fontFamily": {
+        "label-sm": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-xl-mobile": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-sm": ["Inter"],
+        "headline-xl": ["Inter"],
+        "label-lg": ["Inter"],
+        "body-lg": ["Inter"],
+        "data-mono-num": ["Inter"],
+        "headline-sm": ["Inter"],
+        "body-md": ["Inter"],
+        "label-md": ["Inter"]
+      },
+      "fontSize": {
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-xl-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "data-mono-num": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-[72px] px-gutter flex items-center gap-space-sm border-b border-outline-variant/20"><div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[20px]">verified_user</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface tracking-tight leading-none">Smart Outpass</span><span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider mt-1 leading-none">HOD PORTAL</span></div></div><nav class="flex flex-col gap-space-xs px-space-md py-space-lg" data-active-classes="bg-secondary-container text-on-secondary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="pending-hod-approvals" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">pending_actions</span><span class="font-label-lg text-label-lg">Pending Approvals</span></div><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">24</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="department-outpasses" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-label-lg text-label-lg">Dept Outpasses</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="department-students" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-lg text-label-lg">Dept Students</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="approval-history" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-label-lg text-label-lg">Approval History</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="hod-profile" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">account_box</span><span class="font-label-lg text-label-lg">HOD Profile</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="font-label-lg text-label-lg">Notifications</span></div></a></nav></div><div class="p-space-md border-t border-outline-variant/20"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-primary-fixed-dim hover:bg-surface-container-highest/20 hover:text-surface transition-colors" data-path="logout" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span class="font-label-lg text-label-lg">Logout</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-[72px] bg-surface-container-lowest border-b border-outline-variant/30 z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-on-surface-variant">HOD Portal</span><span class="font-label-md text-label-md text-outline">/</span><span class="font-label-lg text-label-lg text-on-surface">Dashboard</span></div><div class="flex items-center gap-gutter"><div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-low text-secondary border border-outline-variant/40"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm uppercase">Academic Session: 2025–26</span></div><div class="relative flex items-center"><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm text-headline-sm">SC</div><div class="flex flex-col text-left"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Dr. S. Chawla</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Head of Department (CSE)</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-[72px] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-gutter py-space-lg flex flex-col gap-space-lg">
+<!-- CONTEXT & HEADER CONTROL BAR -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-space-xs font-label-md text-label-md">
+<span class="text-on-surface-variant">HOD Portal</span>
+<span class="text-outline">/</span>
+<a class="text-secondary hover:underline" href="#">Pending Approvals</a>
+<span class="text-outline">/</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">#OP-2025-0842</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+<span class="w-2 h-2 rounded-full bg-surface-bright animate-pulse"></span>
+            Stage 2: HOD Endorsement Desk • Departure in 18 Hours
+          </div>
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+            Extended Egress (&gt;48H Rule Active)
+          </div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Back to Queue
+        </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-low text-error hover:bg-error-container/60 transition-colors font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+          Flag Dept Inquiry
+        </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[18px]">print</span>
+          Print Dossier PDF
+        </button>
+</div>
+</div>
+<!-- MAIN TWO-COLUMN REVIEW DOSSIER -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT COLUMN: 65% width (col-span-8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- STUDENT PROFILE & ACADEMIC STANDING -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest flex items-center justify-center font-headline-lg text-headline-lg text-secondary">
+                  AK
+                </div>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[12px]">school</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Arjun Kumar</h2>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface">21BCE1042</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">B.Tech Computer Science &amp; Engineering • 3rd Year • Sem 6 (Sec B)</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Assigned Mentor: <strong class="text-on-surface font-label-md">Dr. K. Ramanathan</strong> (Endorsed &amp; Signed)</span>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between sm:justify-center">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Cohort Status</span>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary mt-0.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                In Good Standing
+              </span>
+</div>
+</div>
+<!-- Academic & Residential Metrics -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Current CGPA</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">8.74</span>
+<span class="font-body-sm text-body-sm text-outline">/ 10.0</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary mt-0.5">Top 12% Cohort</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Curfew Adherence</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">88.4%</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary-container mt-0.5">Eligible for Egress</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Term Outpasses</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">03</span>
+<span class="font-body-sm text-body-sm text-outline">Approved</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-0.5">0 Overdue Records</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Hostel Allocation</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Kaveri Boys</span>
+</div>
+<span class="font-label-sm text-[10px] text-outline mt-0.5">Block 3, Room 412</span>
+</div>
+</div>
+<!-- Parent Contact Banner -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm p-3 rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">phone_iphone</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Emergency Contact: S. Kumar (Father) • +91 98765-43210</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Residential Address: 142 Gandhi Puram Road, Coimbatore, TN</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-lowest text-secondary font-label-sm text-label-sm self-start sm:self-auto shadow-sm">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+              Parent 2FA Authenticated
+            </div>
+</div>
+</div>
+<!-- STAGE 1 MENTOR CLEARANCE RECORD -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Stage 1 Endorsement: Faculty Mentor Clearance</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Preliminary verification conducted under CSE Department bylaws</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Endorsed &amp; Verified
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Evaluating Faculty Mentor</span>
+<span class="font-label-lg text-label-lg text-on-surface">Dr. K. Ramanathan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Associate Professor, Department of CSE</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Verification Timestamp</span>
+<span class="font-label-lg text-label-lg text-on-surface font-mono">21 Feb 2025 • 09:15 AM IST</span>
+<span class="font-body-sm text-body-sm text-secondary">Cryptographic Signature Valid (UID: SEC-8891)</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">format_quote</span>
+<span class="font-label-md text-label-md">Mentor Remarks &amp; Academic Audit:</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed italic pl-6">
+              "Verified student has no conflicting laboratory practicals or sessional exams during this period. Parent telephonically confirmed elder sister's wedding event. Leave recommended for HOD clearance."
+            </p>
+</div>
+</div>
+<!-- OUTPASS & TRAVEL SPECIFICATIONS -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">commute</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Outpass &amp; Egress Specifications</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ref: #OP-2025-0842</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Outpass Classification</span>
+<span class="font-label-lg text-label-lg text-on-surface">Home Visit</span>
+<span class="font-body-sm text-body-sm text-error font-medium">&gt; 48 Hours Extended Egress</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Biometric Gate Departure</span>
+<span class="font-label-lg text-label-lg text-on-surface">Fri, 21 Feb 2025 • 17:00 IST</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gate 04 (Biometric Turnstile)</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Strict Return Curfew</span>
+<span class="font-label-lg text-label-lg text-on-surface">Mon, 24 Feb 2025 • 20:00 IST</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hostel Roll-Call Verification</span>
+</div>
+</div>
+<!-- Total Duration & Statutory Rule Banner -->
+<div class="p-space-md rounded-lg bg-surface-container-high flex items-start gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">timelapse</span>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface">Total Absence Duration: 3 Days, 3 Hours (75.0 Total Hours)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-sm text-label-sm">Mandatory Dual Clearance</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Residential Egress regulation section 4.2 dictates that any residential leave exceeding 48 hours requires simultaneous endorsement by the Head of Department and formal sanction by the Associate Dean of Student Welfare.
+              </p>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface">Declared Purpose of Leave:</span>
+<div class="p-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md leading-relaxed">
+              "Attending elder sister's wedding ceremony (Kalyana Mandapam, Gandhipuram) and accompanying family for mandatory ancestral ritual celebrations. Return transit confirmed via train on Monday afternoon."
+            </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Destination Residential Address</span>
+<p class="font-body-md text-body-md text-on-surface bg-surface-container-low p-space-sm rounded-lg">
+                142 Gandhi Puram Road, Near Central Bus Stand, Coimbatore, Tamil Nadu – PIN: 641012
+              </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Transit Logistics</span>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Cheran Superfast Express</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PNR: 4218902143 (Train Confirmed)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SUPPORTING DOCUMENTS & COMPLIANCE PRE-CHECKS -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dossier Attachments &amp; System Checks</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+              4/4 Automated Pre-checks Passed
+            </span>
+</div>
+<!-- Document download cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-[28px]">picture_as_pdf</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate max-w-[180px]">Parent_Consent_Letter.pdf</span>
+<span class="font-body-sm text-body-sm text-outline">1.8 MB • Cryptostamped</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" title="Preview document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" title="Download file">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[28px]">image</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate max-w-[180px]">Wedding_Invitation_Card.jpg</span>
+<span class="font-body-sm text-body-sm text-outline">3.2 MB • Scanned Copy</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" title="Preview document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" title="Download file">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Compliance Checklist Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-xs pt-space-xs">
+<div class="flex items-center gap-2 p-2 rounded bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface">Parent OTP Confirmed</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface">No Sessional Exams</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface">Attendance &gt; 75% OK</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface">Conduct: Clean Record</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: 35% width (col-span-4) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-[92px]">
+<!-- HOD DECISION DESK CARD -->
+<div class="rounded-xl bg-surface-container-low shadow-md p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Stage 2 Decision Desk</h3>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Department Authority Clearance</span>
+</div>
+</div>
+</div>
+<!-- Approver Bio Banner -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm text-headline-sm">
+              SC
+            </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Dr. S. Chawla</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Head of Department (CSE)</span>
+<span class="font-label-sm text-[10px] text-outline mt-0.5">Authorized Signatory • Tier 2 Gatekeeper</span>
+</div>
+</div>
+<!-- Directives & Remarks input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="hod-remarks">
+<span>HOD Endorsement Directives</span>
+<span class="text-outline font-body-sm text-[11px]">Forwarded to Assoc. Dean</span>
+</label>
+<textarea class="w-full p-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary placeholder:text-outline" id="hod-remarks" placeholder="Enter department endorsement notes, condition for leave clearance, or forwarding remarks for Associate Dean..." rows="4"></textarea>
+</div>
+<!-- Action CTA Group -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full flex items-center justify-center gap-2 py-3 px-space-md rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 transition-all font-label-lg text-label-lg shadow-md active:scale-[0.99]" id="btn-approve">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+              Approve &amp; Forward to Assoc. Dean
+            </button>
+<div class="grid grid-cols-2 gap-space-xs mt-1">
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-space-sm rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" id="btn-revision">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sync_problem</span>
+                Request Revision
+              </button>
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-space-sm rounded-lg bg-surface-container-lowest text-error hover:bg-error-container/40 transition-colors font-label-md text-label-md" id="btn-reject">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                Reject Request
+              </button>
+</div>
+</div>
+<!-- Automated Escalation Notice -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+              Upon HOD clearance, this dossier automatically advances to <strong>Stage 3: Associate Dean of Student Welfare (Dr. M. Vasudevan)</strong> for statutory sanction under the &gt;48H policy. An automated SMS tracking dispatch will trigger to the student and parent.
+            </p>
+</div>
+</div>
+<!-- APPROVAL WORKFLOW ROUTING TREE -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Multi-Stage Routing Tree</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">5-TIER VERIFICATION</span>
+</div>
+<!-- Stepper vertical progression -->
+<div class="flex flex-col relative pl-2">
+<!-- Tier 1: Student Submission -->
+<div class="flex items-start gap-space-md pb-6 relative">
+<div class="absolute left-3.5 top-7 bottom-0 w-0.5 bg-secondary"></div>
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">done</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface">Stage 1: Student Submission</span>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Done</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Arjun Kumar • 21 Feb, 08:30 IST</span>
+<span class="font-label-sm text-[11px] text-outline mt-0.5">Form submitted with attached wedding invitation</span>
+</div>
+</div>
+<!-- Tier 2: Faculty Mentor Endorsement -->
+<div class="flex items-start gap-space-md pb-6 relative">
+<div class="absolute left-3.5 top-7 bottom-0 w-0.5 bg-secondary"></div>
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">done</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface">Stage 2: Faculty Mentor Clearance</span>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Done</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dr. K. Ramanathan • 21 Feb, 09:15 IST</span>
+<span class="font-label-sm text-[11px] text-outline mt-0.5">Curfew and lab attendance verified</span>
+</div>
+</div>
+<!-- Tier 3: HOD Department Clearance (ACTIVE) -->
+<div class="flex items-start gap-space-md pb-6 relative">
+<div class="absolute left-3.5 top-7 bottom-0 w-0.5 bg-surface-variant"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest ring-2 ring-secondary flex items-center justify-center shrink-0 z-10 shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-secondary font-bold">Stage 3: HOD Dept Clearance</span>
+<span class="font-label-sm text-[10px] px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container">Current</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Dr. S. Chawla • Awaiting Decision</span>
+<span class="font-label-sm text-[11px] text-secondary mt-0.5">Pending clearance for &gt;48H escalation</span>
+</div>
+</div>
+<!-- Tier 4: Associate Dean Sanction -->
+<div class="flex items-start gap-space-md pb-6 relative">
+<div class="absolute left-3.5 top-7 bottom-0 w-0.5 bg-surface-variant"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline">Stage 4: Associate Dean Sanction</span>
+<span class="font-body-sm text-body-sm text-outline">Dr. M. Vasudevan (Student Welfare)</span>
+<span class="font-label-sm text-[11px] text-outline mt-0.5">Triggered automatically post HOD approval</span>
+</div>
+</div>
+<!-- Tier 5: Hostel Warden Egress Token -->
+<div class="flex items-start gap-space-md">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-[15px]">qr_code</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline">Stage 5: Turnstile Gate Pass Generation</span>
+<span class="font-body-sm text-body-sm text-outline">Kaveri Hostel Chief Warden</span>
+<span class="font-label-sm text-[11px] text-outline mt-0.5">Dynamic biometric QR pass generation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- EMERGENCY & SECURITY CONTACT FOOTER -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">support_agent</span>
+<span class="font-label-md text-label-md">Direct Security &amp; Protocol Desks:</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>CSE Department Governance Desk:</span>
+<span class="font-mono text-on-surface font-semibold">Ext. 104</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Campus Security Control Room (24/7):</span>
+<span class="font-mono text-error font-semibold">Ext. 204</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE CLIENT-SIDE BEHAVIOR (Micro-interactions) -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnApprove = document.getElementById('btn-approve');
+      const btnReject = document.getElementById('btn-reject');
+      const btnRevision = document.getElementById('btn-revision');
+      const remarks = document.getElementById('hod-remarks');
+
+      if (btnApprove) {
+        btnApprove.addEventListener('click', () => {
+          const defaultNotes = remarks.value.trim() || "Approved under CSE standard guidelines. Satisfies academic and parental clearance.";
+          btnApprove.disabled = true;
+          btnApprove.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Endorsing &amp; Forwarding...';
+          btnApprove.classList.add('opacity-80');
+
+          setTimeout(() => {
+            btnApprove.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Endorsed &bull; Escalated to Dean';
+            btnApprove.classList.remove('bg-secondary', 'opacity-80');
+            btnApprove.classList.add('bg-secondary-container', 'text-on-secondary-container');
+            
+            // Show toast notification
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-container text-on-primary-fixed shadow-xl transition-all duration-300';
+            toast.innerHTML = '<span class="material-symbols-outlined text-secondary text-[22px]">verified</span><div><div class="font-label-md text-white">Dossier #OP-2025-0842 Endorsed</div><div class="font-body-sm text-primary-fixed">Transmitted to Associate Dean (Dr. M. Vasudevan)</div></div>';
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+              toast.classList.add('opacity-0', 'translate-y-2');
+              setTimeout(() => toast.remove(), 400);
+            }, 4000);
+          }, 1000);
+        });
+      }
+
+      if (btnReject) {
+        btnReject.addEventListener('click', () => {
+          const reason = prompt('Please enter the mandatory institutional reason for outpass rejection:');
+          if (reason) {
+            btnReject.innerHTML = '<span class="material-symbols-outlined text-[18px]">block</span> Rejected';
+            btnReject.disabled = true;
+            btnApprove.disabled = true;
+            btnApprove.classList.add('opacity-50');
+            alert('Outpass #OP-2025-0842 rejected. Student and Mentor notified.');
+          }
+        });
+      }
+
+      if (btnRevision) {
+        btnRevision.addEventListener('click', () => {
+          const query = prompt('Enter clarification request for Faculty Mentor Dr. K. Ramanathan:');
+          if (query) {
+            btnRevision.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span> Sent to Mentor';
+            btnRevision.disabled = true;
+          }
+        });
+      }
+    });
+  </script>
+</div></main></div></body></html>
